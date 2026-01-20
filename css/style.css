@@ -418,7 +418,34 @@ footer p { color: var(--text-muted); margin-bottom: 30px; }
     line-height: 1.5;
 }
 
-/* Cores específicas para cada card no hover (Opcional, mas fica bonito) */
-.interest-card.cyber:hover .icon-box { color: #22c55e; background: rgba(34, 197, 94, 0.1); } /* Verde Hacker */
-.interest-card.hardware:hover .icon-box { color: #f59e0b; background: rgba(245, 158, 11, 0.1); } /* Laranja Circuito */
-.interest-card.community:hover .icon-box { color: #3b82f6; background: rgba(59, 130, 246, 0.1); } /* Azul */
+/* Cores específicas para cada card no hover  */
+.interest-card.cyber:hover {
+    border-color: #ef4444; 
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.2); 
+}
+
+.interest-card.cyber:hover .icon-box { 
+    color: #ef4444; 
+    background: rgba(239, 68, 68, 0.1); 
+}
+
+
+.interest-card.hardware:hover {
+    border-color: #f59e0b;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.1);
+}
+
+.interest-card.hardware:hover .icon-box {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.interest-card.community:hover{
+    border-color: #3b82f6;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
+}
+
+.interest-card.community:hover .icon-box {
+    color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+}
