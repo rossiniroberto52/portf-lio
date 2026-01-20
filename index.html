@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Consultor & Desenvolvedor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">DEV.</div>
+        <ul class="nav-links">
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact" class="btn-contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            
+            <div class="profile-container">
+                <img src="./assets/imgs/perfil.jpg" alt="Foto de Perfil" class="profile-pic">
+            </div>
+
+            <span class="badge">Backend & Systems Developer</span>
+            <h1>Resolvendo problemas com <span class="highlight">lógica e código</span>.</h1>
+            <p>Estudante de Ciência da Computação na UNICAP e Consultor de Projetos na EJ Unicap. Foco em arquitetura de software, automação e desenvolvimento de sistemas robustos.</p>
+            
+            <div class="cta-group">
+                <a href="#projects" class="btn-primary">Ver Projetos</a>
+                <a href="./assets/docs/curriculo.pdf" target="_blank" class="btn-secondary">Baixar CV</a>
+                <a href="https://github.com/rossiniroberto52" target="_blank" class="btn-secondary">GitHub</a>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Sobre Mim</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Atualmente cursando <strong>Ciência da Computação na UNICAP (2025-2028)</strong>, atuo como Analista de Projetos na Empresa Júnior, liderando iniciativas técnicas.</p>
+                    <p>Minha paixão começou aos 8 anos, unindo música e código. Hoje, meu foco é tirar a complexidade da frente e deixar o sistema rodar liso atrás, seja criando APIs em Java ou scripts de automação.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>Foco</h3>
+                        <p>Backend & Automação</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Status</h3>
+                        <p>Disponível para Projetos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section bg-dark">
+        <div class="container">
+            <h2>Projetos Selecionados</h2>
+            <div class="project-grid">
+                
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="./assets/imgs/eduverse.jpg" alt="Backend Code" class="img-fluid">
+                    </div>
+                    <div class="project-info">
+                        <h3>Eduverse Platform</h3>
+                        <p>Backend para plataforma educacional digital. Arquitetura robusta utilizando Java, Spring Boot e PostgreSQL. Integração de APIs e modelagem de banco de dados.</p>
+                        <div class="tags">
+                            <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span>
+                        </div>
+                        <a href="https://github.com/jcpm-eduverse/edu-verse-2.0" class="link-arrow">Ver no GitHub &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="2D C++ Engine" class="img-fluid">
+                    </div>
+                    <div class="project-info">
+                        <h3>Custom 2D Game Engine</h3>
+                        <p>Engine 2D desenvolvida do zero (from scratch) em C++. Foco em arquitetura de baixo nível, gerenciamento manual de memória, loop de jogo otimizado e renderização de sprites.</p>
+                    <div class="tags">
+                    <span>C++</span><span>SDL/OpenGL</span><span>Systems Programming</span>
+                    </div>
+                        <a href="https://github.com/rossiniroberto52/gameengine" class="link-arrow">Ver Código no GitHub &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="./assets/imgs/n8n-workflow.png" alt="Automation" class="img-fluid">
+                    </div>
+                    <div class="project-info">
+                        <h3>AI Content Workflow</h3>
+                        <p>Automação complexa via n8n integrando Gemini API e Notion. Gera ideias de conteúdo baseadas em RSS feeds e as organiza automaticamente.</p>
+                        <div class="tags">
+                            <span>n8n</span><span>Gemini API</span><span>Automação</span>
+                        </div>
+                        <a href="#" class="link-arrow">Ver Fluxo &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1000&auto=format&fit=crop" alt="School Bus System" class="img-fluid">
+                    </div>
+                    <div class="project-info">
+                        <h3>School Transport Manager</h3>
+                        <p>Sistema completo de gestão logística escolar. Controle de rotas inteligentes, alocação de motoristas e faturamento mensal automatizado via ASP.NET Core MVC.</p>
+                    <div class="tags">
+                    <span>C#</span><span>ASP.NET Core</span><span>Entity Framework</span>
+                    </div>
+                        <a href="https://github.com/rossiniroberto52/sistemadeTransporteEscolar" class="link-arrow">Ver Arquitetura &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Arsenal Técnico</h2>
+            <div class="skills-wrapper">
+                <div class="skill-category">
+                    <h3>Linguagens</h3>
+                    <ul class="skill-list">
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>C#</li>
+                        <li>C++</li>
+                        <li>C</li>
+                        <li>Rust</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Tecnologias & Tools</h3>
+                    <ul class="skill-list">
+                        <li>Spring Boot</li>
+                        <li>Unity Engine</li>
+                        <li>docker</li>
+                        <li>n8n</li>
+                        <li>PostgreSQL</li>
+                        <li>Git/GitHub</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Conceitos</h3>
+                    <ul class="skill-list">
+                        <li>Sistemas Digitais</li>
+                        <li>Algoritmos</li>
+                        <li>POO</li>
+                        <li>Estrutura de Dados</li>
+                        <li>Cálculo Aplicado</li>
+                        <li>API REST</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container footer-content">
+            <h2>Vamos construir algo?</h2>
+            <p>Estou sempre aberto a discutir desenvolvimento backend, hardware ou automação.</p>
+            <a href="mailto:rossiniroberto52@gmail.com" class="btn-primary">Entrar em Contato</a>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/rossini-roberto-q-l-junior-5b5562350" target="_blank">LinkedIn</a>
+                <a href="https://github.com/rossiniroberto52" target="_blank">GitHub</a>
+                <a href="https://www.instagram.com/rossiniquadros/" target="_blank">Instagram</a>
+            </div>
+            <p class="copyright">&copy; 2026 Desenvolvido com Ceticismo e Código.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
