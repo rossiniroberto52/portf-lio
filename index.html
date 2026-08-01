@@ -15,30 +15,36 @@
 
     <nav class="navbar">
         <div class="logo">DEV.</div>
-        <ul class="nav-links">
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#trajectory">Trajetória</a></li> 
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#certificates">Certificados</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact" class="btn-contact">Contato</a></li>
-        </ul>
+        <div class="navbar-right">
+            <ul class="nav-links">
+                <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
+                <li><a href="#trajectory" data-i18n="nav.trajectory">Trajetória</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
+                <li><a href="#certificates" data-i18n="nav.certificates">Certificados</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#contact" class="btn-contact" data-i18n="nav.contact">Contato</a></li>
+            </ul>
+            <div class="lang-switch">
+                <button id="langPt" class="lang-btn active" onclick="setLang('pt')" aria-label="Português">🇧🇷</button>
+                <button id="langEn" class="lang-btn" onclick="setLang('en')" aria-label="English">🇺🇸</button>
+            </div>
+        </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            
+
             <div class="profile-container">
                 <img src="./assets/imgs/perfil.jpg" alt="Foto de Perfil" class="profile-pic">
             </div>
 
             <span class="badge">Backend & Systems Developer</span>
-            <h1>Resolvendo problemas com <span class="highlight">lógica e código</span>.</h1>
-            <p>Estudante de Ciência da Computação na UNICAP e Consultor de Projetos na EJ Unicap. Foco em arquitetura de software, automação e desenvolvimento de sistemas robustos.</p>
-            
+            <h1 data-i18n-html="hero.title">Resolvendo problemas com <span class="highlight">lógica e código</span>.</h1>
+            <p data-i18n="hero.p">Estudante de Ciência da Computação na UNICAP e Consultor de Projetos na EJ Unicap. Foco em arquitetura de software, automação e desenvolvimento de sistemas robustos.</p>
+
             <div class="cta-group">
-                <a href="#projects" class="btn-primary">Ver Projetos</a>
-                <a href="./assets/docs/CV_Rossini_Roberto_Backend_DEV.pdf" target="_blank" class="btn-secondary">Baixar CV</a>
+                <a href="#projects" class="btn-primary" data-i18n="hero.cta1">Ver Projetos</a>
+                <a href="./assets/docs/CV_Rossini_Roberto_Backend_DEV.pdf" target="_blank" class="btn-secondary" data-i18n="hero.cta2">Baixar CV</a>
                 <a href="https://github.com/rossiniroberto52" target="_blank" class="btn-secondary">GitHub</a>
             </div>
 
@@ -47,20 +53,20 @@
 
     <section id="about" class="section">
         <div class="container">
-            <h2>Sobre Mim</h2>
+            <h2 data-i18n="about.h2">Sobre Mim</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>Atualmente cursando <strong>Ciência da Computação na UNICAP (2025-2028)</strong>, atuo como Analista de Projetos na Empresa Júnior, liderando iniciativas técnicas.</p>
-                    <p>Minha paixão começou aos 8 anos, unindo música e código. Hoje, meu foco é tirar a complexidade da frente e deixar o sistema rodar liso atrás, seja criando APIs em Java ou scripts de automação.</p>
+                    <p data-i18n-html="about.p1">Atualmente cursando <strong>Ciência da Computação na UNICAP (2025-2028)</strong>, atuo como Analista de Projetos na Empresa Júnior, liderando iniciativas técnicas.</p>
+                    <p data-i18n="about.p2">Minha paixão começou aos 8 anos, unindo música e código. Hoje, meu foco é tirar a complexidade da frente e deixar o sistema rodar liso atrás, seja criando APIs em Java ou scripts de automação.</p>
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
-                        <h3>Foco</h3>
-                        <p>Backend & Automação</p>
+                        <h3 data-i18n="stat1.h3">Foco</h3>
+                        <p data-i18n="stat1.p">Backend & Automação</p>
                     </div>
                     <div class="stat-card">
-                        <h3>Status</h3>
-                        <p>Disponível para Projetos</p>
+                        <h3 data-i18n="stat2.h3">Status</h3>
+                        <p data-i18n="stat2.p">Disponível para Projetos</p>
                     </div>
                 </div>
             </div>
@@ -69,46 +75,56 @@
 
     <section id="trajectory" class="section">
         <div class="container">
-            <h2>Trajetória</h2>
+            <h2 data-i18n="trajectory.h2">Trajetória</h2>
             <div class="timeline">
-                
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">2026.1 - Presente</div>
+                    <div class="timeline-date" data-i18n="t1.date">2026.2 - Presente</div>
                     <div class="timeline-content">
-                        <h3>Analista de Projetos</h3>
-                        <span class="company">EJ Unicap (Empresa Júnior)</span>
-                        <p>Atuação no desenvolvimento de soluções tecnológicas e consultoria. Liderança técnica em projetos internos e gestão de demandas de TI.</p>
+                        <h3 data-i18n="t1.title">Gerente de computação</h3>
+                        <span class="company" data-i18n="ej.company">EJ Unicap (Empresa Júnior)</span>
+                        <p data-i18n="ej.desc">Atuação no desenvolvimento de soluções tecnológicas e consultoria. Liderança técnica em projetos internos e gestão de demandas de TI.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025.2 - 2026.1</div>
+                    <div class="timeline-date" data-i18n="t2.date">2026.1 - 2026.2</div>
                     <div class="timeline-content">
-                        <h3>Consultor de Projetos</h3>
-                        <span class="company">EJ Unicap (Empresa Júnior)</span>
-                        <p>Atuação no desenvolvimento de soluções tecnológicas e consultoria. Liderança técnica em projetos internos e gestão de demandas de TI.</p>
+                        <h3 data-i18n="t2.title">Analista de Projetos</h3>
+                        <span class="company" data-i18n="ej.company">EJ Unicap (Empresa Júnior)</span>
+                        <p data-i18n="ej.desc">Atuação no desenvolvimento de soluções tecnológicas e consultoria. Liderança técnica em projetos internos e gestão de demandas de TI.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">2025 - 2028</div>
+                    <div class="timeline-date" data-i18n="t3.date">2025.2 - 2026.1</div>
                     <div class="timeline-content">
-                        <h3>Ciência da Computação</h3>
-                        <span class="company">Universidade Católica de Pernambuco (UNICAP)</span>
-                        <p>Bacharelado com foco em Engenharia de Software e Sistemas. Desenvolvimento acadêmico em algoritmos e estruturas de dados.</p>
+                        <h3 data-i18n="t3.title">Consultor de Projetos</h3>
+                        <span class="company" data-i18n="ej.company">EJ Unicap (Empresa Júnior)</span>
+                        <p data-i18n="ej.desc">Atuação no desenvolvimento de soluções tecnológicas e consultoria. Liderança técnica em projetos internos e gestão de demandas de TI.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-date">Início</div>
+                    <div class="timeline-date" data-i18n="t4.date">2025 - 2028</div>
                     <div class="timeline-content">
-                        <h3>Estudos Autônomos</h3>
+                        <h3 data-i18n="t4.title">Ciência da Computação</h3>
+                        <span class="company" data-i18n="t4.company">Universidade Católica de Pernambuco (UNICAP)</span>
+                        <p data-i18n="t4.desc">Bacharelado com foco em Engenharia de Software e Sistemas. Desenvolvimento acadêmico em algoritmos e estruturas de dados.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date" data-i18n="t5.date">Início</div>
+                    <div class="timeline-content">
+                        <h3 data-i18n="t5.title">Estudos Autônomos</h3>
                         <span class="company">Self-Taught</span>
-                        <p>Desenvolvimento dos fundamentos de lógica de programação e primeiros projetos práticos em Java e automação.</p>
+                        <p data-i18n="t5.desc">Desenvolvimento dos fundamentos de lógica de programação e primeiros projetos práticos em Java e automação.</p>
                     </div>
                 </div>
 
@@ -118,20 +134,20 @@
 
     <section id="projects" class="section bg-dark">
         <div class="container">
-            <h2>Projetos Selecionados</h2>
+            <h2 data-i18n="projects.h2">Projetos Selecionados</h2>
             <div class="project-grid">
-                
+
                 <article class="project-card">
                     <div class="project-image">
                         <img src="./assets/imgs/eduverse.jpg" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
                         <h3>Eduverse Platform</h3>
-                        <p>Backend para plataforma educacional digital. Arquitetura robusta utilizando Java, Spring Boot e PostgreSQL. Integração de APIs e modelagem de banco de dados.</p>
+                        <p data-i18n="p1.desc">Backend para plataforma educacional digital. Arquitetura robusta utilizando Java, Spring Boot e PostgreSQL. Integração de APIs e modelagem de banco de dados.</p>
                         <div class="tags">
                             <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span>
                         </div>
-                        <a href="https://github.com/orgs/jcpm-eduverse/repositories" class="link-arrow" target="_blank">Ver no GitHub &rarr;</a>
+                        <a href="https://github.com/orgs/jcpm-eduverse/repositories" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
                     </div>
                 </article>
 
@@ -141,11 +157,11 @@
                     </div>
                     <div class="project-info">
                         <h3>Custom 2D Game Engine</h3>
-                        <p>Engine 2D desenvolvida do zero (from scratch) em C++. Foco em arquitetura de baixo nível, gerenciamento manual de memória, loop de jogo otimizado e renderização de sprites.</p>
+                        <p data-i18n="p2.desc">Engine 2D desenvolvida do zero (from scratch) em C++. Foco em arquitetura de baixo nível, gerenciamento manual de memória, loop de jogo otimizado e renderização de sprites.</p>
                     <div class="tags">
                     <span>C++</span><span>SDL/OpenGL</span><span>Systems Programming</span>
                     </div>
-                        <a href="https://github.com/rossiniroberto52/gameengine-renew" class="link-arrow" target="_blank">Ver Código no GitHub &rarr;</a>
+                        <a href="https://github.com/rossiniroberto52/gameengine-renew" class="link-arrow" target="_blank" data-i18n="link.githubcode">Ver Código no GitHub &rarr;</a>
                     </div>
                 </article>
 
@@ -155,11 +171,11 @@
                     </div>
                     <div class="project-info">
                         <h3>AI Content Workflow</h3>
-                        <p>Automação complexa via n8n integrando Gemini API e Notion. Gera ideias de conteúdo baseadas em RSS feeds e as organiza automaticamente.</p>
+                        <p data-i18n="p3.desc">Automação complexa via n8n integrando Gemini API e Notion. Gera ideias de conteúdo baseadas em RSS feeds e as organiza automaticamente.</p>
                         <div class="tags">
-                            <span>n8n</span><span>Gemini API</span><span>Automação</span>
+                            <span>n8n</span><span>Gemini API</span><span data-i18n="tag.automacao">Automação</span>
                         </div>
-                        <a href="#" class="link-arrow">Ver Fluxo &rarr;</a>
+                        <a href="#" class="link-arrow" data-i18n="link.fluxo">Ver Fluxo &rarr;</a>
                     </div>
                 </article>
 
@@ -169,11 +185,11 @@
                     </div>
                     <div class="project-info">
                         <h3>Don't let it fall (GGJ 2026)</h3>
-                        <p>Jogo 2D sobre um mundo distópico. Vencedor nas categorias "Melhor Visual" e "Melhor Jogo da Jam" na Poli UPE. Desenvolvido por uma equipe de 5 pessoas em menos de 48h.</p>
+                        <p data-i18n="p4.desc">Jogo 2D sobre um mundo distópico. Vencedor nas categorias "Melhor Visual" e "Melhor Jogo da Jam" na Poli UPE. Desenvolvido por uma equipe de 5 pessoas em menos de 48h.</p>
                     <div class="tags">
                     <span>Game Dev</span><span>Unity</span><span>C#</span>
                     </div>
-                        <a href="https://globalgamejam.org/games/2026/dont-let-it-fall-1" class="link-arrow" target="_blank">Ver Projeto na GGJ &rarr;</a>
+                        <a href="https://globalgamejam.org/games/2026/dont-let-it-fall-1" class="link-arrow" target="_blank" data-i18n="link.ggj">Ver Projeto na GGJ &rarr;</a>
                     </div>
                 </article>
 
@@ -183,11 +199,11 @@
                     </div>
                     <div class="project-info">
                         <h3>Audity-sim</h3>
-                        <p>Simulador de propagação acústica 2D em tempo real, acelerado via GPU usando Taichi Lang.</p>
+                        <p data-i18n="p5.desc">Simulador de propagação acústica 2D em tempo real, acelerado via GPU usando Taichi Lang.</p>
                         <div class="tags">
                             <span>Python</span><span>Taichi Lang</span><span>GPU Computing</span><span>High Performance</span><span>Physics</span>
                         </div>
-                        <a href="https://github.com/rossiniroberto52/audity-sim.git" class="link-arrow" target="_blank">Ver no GitHub &rarr;</a>
+                        <a href="https://github.com/rossiniroberto52/audity-sim.git" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
                     </div>
                 </article>
 
@@ -197,11 +213,11 @@
                     </div>
                     <div class="project-info">
                         <h3>Orbital-Maneuver-Solver</h3>
-                        <p>Uma ferramenta de simulação numérica de alta precisão em C++ para calcular manobras de pouso (Suicide Burn) com massa variável e arrasto gravitacional não-uniforme. Inclui pipeline de visualização de telemetria em Python.</p>
+                        <p data-i18n="p6.desc">Uma ferramenta de simulação numérica de alta precisão em C++ para calcular manobras de pouso (Suicide Burn) com massa variável e arrasto gravitacional não-uniforme. Inclui pipeline de visualização de telemetria em Python.</p>
                         <div class="tags">
                             <span>C++</span><span>Python</span><span>Pandas</span><span>Physics</span>
                         </div>
-                        <a href="https://github.com/rossiniroberto52/Orbital-Maneuver-Solver" class="link-arrow" target="_blank">Ver no GitHub &rarr;</a>
+                        <a href="https://github.com/rossiniroberto52/Orbital-Maneuver-Solver" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
                     </div>
                 </article>
                 <article class="project-card">
@@ -210,11 +226,11 @@
                     </div>
                     <div class="project-info">
                         <h3>Quartz </h3>
-                        <p>Um compilador nativo desenvolvido do zero em C puro, traduzindo código estruturado direto para Assembly x86_64. Implementa escopo léxico rigoroso via Tabela de Símbolos plana (cache-friendly) e controle de fluxo com curto-circuito lógico no hardware.</p>
+                        <p data-i18n="p7.desc">Um compilador nativo desenvolvido do zero em C puro, traduzindo código estruturado direto para Assembly x86_64. Implementa escopo léxico rigoroso via Tabela de Símbolos plana (cache-friendly) e controle de fluxo com curto-circuito lógico no hardware.</p>
                         <div class="tags">
                             <span>C</span><span>Assembly x86_64</span><span>Linux</span>
                         </div>
-                        <a href="https://github.com/rossiniroberto52/Quartz-LANG-AND-COMPILER" class="link-arrow" target="_blank">Ver no GitHub &rarr;</a>
+                        <a href="https://github.com/rossiniroberto52/Quartz-LANG-AND-COMPILER" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
                     </div>
                 </article>
 
@@ -223,12 +239,12 @@
                         <img src="./assets/imgs/ejunicap.jpg" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
-                        <h3>Plataforma interna EJUNICAP</h3>
-                        <p>Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.</p>
+                        <h3 data-i18n="p8.title">Plataforma interna EJUNICAP</h3>
+                        <p data-i18n="p8.desc">Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.</p>
                         <div class="tags">
                             <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>CRM/ERP</span>
                         </div>
-                        <a href="https://github.com/organizations/EJUnicap-org" class="link-arrow" target="_blank">Ver no GitHub &rarr;</a>
+                        <a href="https://github.com/organizations/EJUnicap-org" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
                     </div>
                 </article>
 
@@ -237,12 +253,12 @@
                         <img src="./assets/imgs/tunel-de-vento.png" alt="Simulation code" class="img-fluid">
                     </div>
                     <div class="project-info">
-                        <h3>Simulador de túnel de vento real</h3>
-                        <p>Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.</p>
+                        <h3 data-i18n="p9.title">Simulador de túnel de vento real</h3>
+                        <p data-i18n="p8.desc">Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.</p>
                         <div class="tags">
                             <span>Python</span><span>Taichi Lang</span><span>GPU Computing</span><span>C/C++</span><span>Physics</span>
                         </div>
-                        <a href="https://github.com/rossiniroberto52/tunel-de-vento" class="link-arrow" target="_blank">Ver no GitHub &rarr;</a>
+                        <a href="https://github.com/rossiniroberto52/tunel-de-vento" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
                     </div>
                 </article>
 
@@ -252,21 +268,36 @@
 
     <section id="certificates" class="section">
         <div class="container">
-            <h2>Reconhecimentos & Certificados</h2>
+            <h2 data-i18n="certificates.h2">Reconhecimentos & Certificados</h2>
             <div class="cert-grid">
-                
+
                 <article class="cert-card">
                     <div class="cert-image">
                         <img src="./assets/imgs/certificado-ggj26.jpg" alt="Certificado Global Game Jam 2026" class="clickable-img" onclick="openModal(this.src)">
                     </div>
                     <div class="cert-info">
-                        <h3>Vencedor - Global Game Jam 2026 (Poli UPE)</h3>
-                        <p><strong>Projeto:</strong> Don't let it fall (Lava Prato Productions)</p>
-                        <p>Jogo vencedor nas categorias <em>Melhor Visual</em> e <em>Melhor Jogo da Jam</em>. Desenvolvido do zero em menos de 48 horas por uma equipe de 5 pessoas sob o tema global "Mask/Máscara".</p>
+                        <h3 data-i18n="c1.title">Vencedor - Global Game Jam 2026.1 (Poli UPE)</h3>
+                        <p><strong data-i18n="cert.project">Projeto:</strong> Don't let it fall (Lava Prato Productions)</p>
+                        <p data-i18n-html="c1.desc">Jogo vencedor nas categorias <em>Melhor Visual</em> e <em>Melhor Jogo da Jam</em>. Desenvolvido do zero em menos de 48 horas por uma equipe de 5 pessoas sob o tema global "Mask/Máscara".</p>
                         <div class="tags">
-                            <span>Game Dev</span><span>Trabalho em Equipe</span><span>Alta Pressão</span>
+                            <span data-i18n="tag.gamedev">Game Dev</span><span data-i18n="tag.equipe">Trabalho em Equipe</span><span data-i18n="tag.pressao">Alta Pressão</span>
                         </div>
-                        <a href="https://www.even3.com.br/documentos/imprimir?i=28905522.05802397.5.8.81366223683271468&cc=9B843475-B862-4000-88A0-9DFD6DC59799" class="link-arrow" target="_blank" style="display: inline-block; margin-top: 15px;">Validar Certificado Original &rarr;</a>
+                        <a href="https://www.even3.com.br/documentos/imprimir?i=28905522.05802397.5.8.81366223683271468&cc=9B843475-B862-4000-88A0-9DFD6DC59799" class="link-arrow" target="_blank" style="display: inline-block; margin-top: 15px;" data-i18n="link.certvalidate">Validar Certificado Original &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="cert-card">
+                    <div class="cert-image">
+                        <img src="./assets/imgs/GGJ26.2.png" alt="Certificado Global Game Jam 2026.2" class="clickable-img" onclick="openModal(this.src)">
+                    </div>
+                    <div class="cert-info">
+                        <h3 data-i18n="c2.title">Participacao - Global Game Jam 2026.2 (Poli UPE)</h3>
+                        <p><strong data-i18n="cert.project">Projeto:</strong> O ultimo backup</p>
+                        <p data-i18n="c2.desc">Desenvolvido do zero em menos de 48 horas por uma equipe de 5 pessoas sob o tema global "Mask/Máscara".</p>
+                        <div class="tags">
+                            <span data-i18n="tag.gamedev">Game Dev</span><span data-i18n="tag.equipe">Trabalho em Equipe</span><span data-i18n="tag.pressao">Alta Pressão</span>
+                        </div>
+                        <a href="https://www.even3.com.br/documentos/imprimir?i=20864526.05802397.5.8.08645260580239758&cc=73B06C7B-FD00-4CB9-83D6-13A69DE14002" class="link-arrow" target="_blank" style="display: inline-block; margin-top: 15px;" data-i18n="link.certvalidate">Validar Certificado Original &rarr;</a>
                     </div>
                 </article>
 
@@ -276,29 +307,29 @@
 
     <section id="skills" class="section bg-dark">
         <div class="container">
-            <h2>Arsenal Técnico</h2>
-            
+            <h2 data-i18n="skills.h2">Arsenal Técnico</h2>
+
             <div class="skills-wrapper">
-                
+
                 <div class="skill-category">
-                    <h3>Main Stack (Profissional)</h3>
+                    <h3 data-i18n="sk1.h3">Main Stack (Profissional)</h3>
                     <ul class="skill-list">
-                        <li><strong>Java</strong> <span class="skill-tag">Avançado</span></li>
-                        <li><strong>Python</strong> <span pan class="skill-tag">Avançado</span></li>
-                        <li><strong>Spring Boot</strong> <span pan class="skill-tag">Avançado</span></li>
-                        <li><strong>PostgreSQL</strong> <span pan class="skill-tag">Avançado</span></li>
-                        <li>API RESTful <span pan class="skill-tag">Avançado</span></li>
+                        <li><strong>Java</strong> <span class="skill-tag" data-i18n="tag.avancado">Avançado</span></li>
+                        <li><strong>Python</strong> <span class="skill-tag" data-i18n="tag.avancado">Avançado</span></li>
+                        <li><strong>Spring Boot</strong> <span class="skill-tag" data-i18n="tag.avancado">Avançado</span></li>
+                        <li><strong>PostgreSQL</strong> <span class="skill-tag" data-i18n="tag.avancado">Avançado</span></li>
+                        <li>API RESTful <span class="skill-tag" data-i18n="tag.avancado">Avançado</span></li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Engenharia de Sistemas</h3>
+                    <h3 data-i18n="sk2.h3">Engenharia de Sistemas</h3>
                     <ul class="skill-list">
-                        <li>C++ <span class="skill-tag">Acadêmico</span></li>
-                        <li>C <span class="skill-tag">Acadêmico</span></li>
-                        <li>Rust <span class="skill-tag">Estudos</span></li>
-                        <li>Estrutura de Dados</li>
-                        <li>Algoritmos</li>
+                        <li>C++ <span class="skill-tag" data-i18n="tag.academico">Acadêmico</span></li>
+                        <li>C <span class="skill-tag" data-i18n="tag.academico">Acadêmico</span></li>
+                        <li>Rust <span class="skill-tag" data-i18n="tag.estudos">Estudos</span></li>
+                        <li data-i18n="sk2.li4">Estrutura de Dados</li>
+                        <li data-i18n="sk2.li5">Algoritmos</li>
                     </ul>
                 </div>
 
@@ -306,20 +337,20 @@
                     <h3>Tools & Workflow</h3>
                     <ul class="skill-list">
                         <li><strong>Docker</strong></li> <li>Git / GitHub</li>
-                        <li>n8n (Automação)</li>
+                        <li data-i18n="sk3.li3">n8n (Automação)</li>
                         <li>Linux (Server/Terminal)</li>
                         <li>Unity Engine</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
-                    <h3>Gestão & Dados</h3>
+                    <h3 data-i18n="sk4.h3">Gestão & Dados</h3>
                     <ul class="skill-list">
-                        <li>Excel Avançado <span class="skill-tag">DashBoard</span></li>
-                        <li>Modelagem de Processos</li>
-                        <li>Gestão Ágil (Scrum/Kanban)</li>
-                        <li>Levantamento de Requisitos</li>
-                        <li>Mapeamento de processos</li>
+                        <li data-i18n="sk4.li1">Excel Avançado <span class="skill-tag">DashBoard</span></li>
+                        <li data-i18n="sk4.li2">Modelagem de Processos</li>
+                        <li data-i18n="sk4.li3">Gestão Ágil (Scrum/Kanban)</li>
+                        <li data-i18n="sk4.li4">Levantamento de Requisitos</li>
+                        <li data-i18n="sk4.li5">Mapeamento de processos</li>
                     </ul>
                 </div>
 
@@ -329,17 +360,17 @@
 
     <section id="interests" class="section">
         <div class="container">
-            <h2>Beyond Code <span class="highlight">_</span></h2>
-            <p class="section-subtitle">O que eu exploro quando não estou buildando APIs.</p>
-            
+            <h2 data-i18n-html="interests.h2">Beyond Code <span class="highlight">_</span></h2>
+            <p class="section-subtitle" data-i18n="interests.subtitle">O que eu exploro quando não estou buildando APIs.</p>
+
             <div class="interests-grid">
-                
+
                 <div class="interest-card cyber">
                     <div class="icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
                     <h3>Cybersecurity</h3>
-                    <p>Estudos ativos em <strong>Purple Teaming</strong>. Familiaridade com ferramentas do Kali Linux (Nmap, Burp Suite, etc) e práticas de Secure Coding (OWASP Top 10).</p>
+                    <p data-i18n-html="interest1.p">Estudos ativos em <strong>Purple Teaming</strong>. Familiaridade com ferramentas do Kali Linux (Nmap, Burp Suite, etc) e práticas de Secure Coding (OWASP Top 10).</p>
                 </div>
 
                 <div class="interest-card hardware">
@@ -347,7 +378,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
                     </div>
                     <h3>Hardware & Low Level</h3>
-                    <p>Entusiasta de arquitetura de computadores. Gosto de entender como o software conversa com o hardware, explorando C e Assembly ocasionalmente.</p>
+                    <p data-i18n="interest2.p">Entusiasta de arquitetura de computadores. Gosto de entender como o software conversa com o hardware, explorando C e Assembly ocasionalmente.</p>
                 </div>
 
                 <div class="interest-card community">
@@ -355,7 +386,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </div>
                     <h3>Open Source</h3>
-                    <p>Contribuição e consumo ativo de softwares livres. Acredito na democratização do código e no aprendizado colaborativo.</p>
+                    <p data-i18n="interest3.p">Contribuição e consumo ativo de softwares livres. Acredito na democratização do código e no aprendizado colaborativo.</p>
                 </div>
 
             </div>
@@ -364,17 +395,17 @@
 
     <footer id="contact">
         <div class="container footer-content">
-            <h2>Vamos construir algo?</h2>
-            <p>Estou sempre aberto a discutir desenvolvimento backend, hardware ou automação.</p>
-            <a href="mailto:rossiniroberto52@gmail.com" class="btn-primary">Entrar em Contato</a>
-            
+            <h2 data-i18n="footer.h2">Vamos construir algo?</h2>
+            <p data-i18n="footer.p">Estou sempre aberto a discutir desenvolvimento backend, hardware ou automação.</p>
+            <a href="mailto:rossiniroberto52@gmail.com" class="btn-primary" data-i18n="footer.contact">Entrar em Contato</a>
+
             <div class="social-links">
                 <a href="www.linkedin.com/in/rossini-roberto" target="_blank">LinkedIn</a>
                 <a href="https://github.com/rossiniroberto52" target="_blank">GitHub</a>
                 <a href="https://www.instagram.com/rossiniquadros/" target="_blank">Instagram</a>
                 <a href="https://wa.me/5581989922827" target="_blank">WhatsApp</a>
             </div>
-            <p class="copyright">&copy; 2026 Desenvolvido com Ceticismo e Código.</p>
+            <p class="copyright" data-i18n="footer.copyright">&copy; 2026 Desenvolvido com Ceticismo e Código.</p>
         </div>
     </footer>
 
@@ -392,6 +423,217 @@
         function closeModal() {
             document.getElementById('imageModal').style.display = "none";
         }
+    </script>
+
+    <script>
+        // ===== Sistema de tradução PT/EN =====
+        const translations = {
+            pt: {
+                "pageTitle": "Portfólio | Consultor & Desenvolvedor",
+                "nav.about": "Sobre",
+                "nav.trajectory": "Trajetória",
+                "nav.projects": "Projetos",
+                "nav.certificates": "Certificados",
+                "nav.skills": "Skills",
+                "nav.contact": "Contato",
+                "hero.title": 'Resolvendo problemas com <span class="highlight">lógica e código</span>.',
+                "hero.p": "Estudante de Ciência da Computação na UNICAP e Consultor de Projetos na EJ Unicap. Foco em arquitetura de software, automação e desenvolvimento de sistemas robustos.",
+                "hero.cta1": "Ver Projetos",
+                "hero.cta2": "Baixar CV",
+                "about.h2": "Sobre Mim",
+                "about.p1": 'Atualmente cursando <strong>Ciência da Computação na UNICAP (2025-2028)</strong>, atuo como Analista de Projetos na Empresa Júnior, liderando iniciativas técnicas.',
+                "about.p2": "Minha paixão começou aos 8 anos, unindo música e código. Hoje, meu foco é tirar a complexidade da frente e deixar o sistema rodar liso atrás, seja criando APIs em Java ou scripts de automação.",
+                "stat1.h3": "Foco",
+                "stat1.p": "Backend & Automação",
+                "stat2.h3": "Status",
+                "stat2.p": "Disponível para Projetos",
+                "trajectory.h2": "Trajetória",
+                "t1.date": "2026.2 - Presente",
+                "t1.title": "Gerente de computação",
+                "t2.date": "2026.1 - 2026.2",
+                "t2.title": "Analista de Projetos",
+                "t3.date": "2025.2 - 2026.1",
+                "t3.title": "Consultor de Projetos",
+                "ej.company": "EJ Unicap (Empresa Júnior)",
+                "ej.desc": "Atuação no desenvolvimento de soluções tecnológicas e consultoria. Liderança técnica em projetos internos e gestão de demandas de TI.",
+                "t4.date": "2025 - 2028",
+                "t4.title": "Ciência da Computação",
+                "t4.company": "Universidade Católica de Pernambuco (UNICAP)",
+                "t4.desc": "Bacharelado com foco em Engenharia de Software e Sistemas. Desenvolvimento acadêmico em algoritmos e estruturas de dados.",
+                "t5.date": "Início",
+                "t5.title": "Estudos Autônomos",
+                "t5.desc": "Desenvolvimento dos fundamentos de lógica de programação e primeiros projetos práticos em Java e automação.",
+                "projects.h2": "Projetos Selecionados",
+                "p1.desc": "Backend para plataforma educacional digital. Arquitetura robusta utilizando Java, Spring Boot e PostgreSQL. Integração de APIs e modelagem de banco de dados.",
+                "p2.desc": "Engine 2D desenvolvida do zero (from scratch) em C++. Foco em arquitetura de baixo nível, gerenciamento manual de memória, loop de jogo otimizado e renderização de sprites.",
+                "p3.desc": "Automação complexa via n8n integrando Gemini API e Notion. Gera ideias de conteúdo baseadas em RSS feeds e as organiza automaticamente.",
+                "p4.desc": 'Jogo 2D sobre um mundo distópico. Vencedor nas categorias "Melhor Visual" e "Melhor Jogo da Jam" na Poli UPE. Desenvolvido por uma equipe de 5 pessoas em menos de 48h.',
+                "p5.desc": "Simulador de propagação acústica 2D em tempo real, acelerado via GPU usando Taichi Lang.",
+                "p6.desc": "Uma ferramenta de simulação numérica de alta precisão em C++ para calcular manobras de pouso (Suicide Burn) com massa variável e arrasto gravitacional não-uniforme. Inclui pipeline de visualização de telemetria em Python.",
+                "p7.desc": "Um compilador nativo desenvolvido do zero em C puro, traduzindo código estruturado direto para Assembly x86_64. Implementa escopo léxico rigoroso via Tabela de Símbolos plana (cache-friendly) e controle de fluxo com curto-circuito lógico no hardware.",
+                "p8.title": "Plataforma interna EJUNICAP",
+                "p8.desc": "Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.",
+                "p9.title": "Simulador de túnel de vento real",
+                "tag.automacao": "Automação",
+                "link.github": "Ver no GitHub &rarr;",
+                "link.githubcode": "Ver Código no GitHub &rarr;",
+                "link.fluxo": "Ver Fluxo &rarr;",
+                "link.ggj": "Ver Projeto na GGJ &rarr;",
+                "certificates.h2": "Reconhecimentos & Certificados",
+                "c1.title": "Vencedor - Global Game Jam 2026.1 (Poli UPE)",
+                "c1.desc": 'Jogo vencedor nas categorias <em>Melhor Visual</em> e <em>Melhor Jogo da Jam</em>. Desenvolvido do zero em menos de 48 horas por uma equipe de 5 pessoas sob o tema global "Mask/Máscara".',
+                "c2.title": "Participacao - Global Game Jam 2026.2 (Poli UPE)",
+                "c2.desc": 'Desenvolvido do zero em menos de 48 horas por uma equipe de 5 pessoas sob o tema "VaporWave".',
+                "cert.project": "Projeto:",
+                "tag.gamedev": "Game Dev",
+                "tag.equipe": "Trabalho em Equipe",
+                "tag.pressao": "Alta Pressão",
+                "link.certvalidate": "Validar Certificado Original &rarr;",
+                "skills.h2": "Arsenal Técnico",
+                "sk1.h3": "Main Stack (Profissional)",
+                "sk2.h3": "Engenharia de Sistemas",
+                "sk2.li4": "Estrutura de Dados",
+                "sk2.li5": "Algoritmos",
+                "sk3.li3": "n8n (Automação)",
+                "sk4.h3": "Gestão & Dados",
+                "sk4.li1": 'Excel Avançado <span class="skill-tag">DashBoard</span>',
+                "sk4.li2": "Modelagem de Processos",
+                "sk4.li3": "Gestão Ágil (Scrum/Kanban)",
+                "sk4.li4": "Levantamento de Requisitos",
+                "sk4.li5": "Mapeamento de processos",
+                "tag.avancado": "Avançado",
+                "tag.academico": "Acadêmico",
+                "tag.estudos": "Estudos",
+                "interests.h2": 'Beyond Code <span class="highlight">_</span>',
+                "interests.subtitle": "O que eu exploro quando não estou buildando APIs.",
+                "interest1.p": 'Estudos ativos em <strong>Purple Teaming</strong>. Familiaridade com ferramentas do Kali Linux (Nmap, Burp Suite, etc) e práticas de Secure Coding (OWASP Top 10).',
+                "interest2.p": "Entusiasta de arquitetura de computadores. Gosto de entender como o software conversa com o hardware, explorando C e Assembly ocasionalmente.",
+                "interest3.p": "Contribuição e consumo ativo de softwares livres. Acredito na democratização do código e no aprendizado colaborativo.",
+                "footer.h2": "Vamos construir algo?",
+                "footer.p": "Estou sempre aberto a discutir desenvolvimento backend, hardware ou automação.",
+                "footer.contact": "Entrar em Contato",
+                "footer.copyright": "&copy; 2026 Desenvolvido com Ceticismo e Código."
+            },
+            en: {
+                "pageTitle": "Portfolio | Consultant & Developer",
+                "nav.about": "About",
+                "nav.trajectory": "Journey",
+                "nav.projects": "Projects",
+                "nav.certificates": "Certificates",
+                "nav.skills": "Skills",
+                "nav.contact": "Contact",
+                "hero.title": 'Solving problems with <span class="highlight">logic and code</span>.',
+                "hero.p": "Computer Science student at UNICAP and Project Consultant at EJ Unicap. Focused on software architecture, automation, and robust systems development.",
+                "hero.cta1": "View Projects",
+                "hero.cta2": "Download CV",
+                "about.h2": "About Me",
+                "about.p1": 'Currently pursuing a degree in <strong>Computer Science at UNICAP (2025-2028)</strong>, working as a Project Analyst at the Junior Enterprise, leading technical initiatives.',
+                "about.p2": "My passion started at age 8, blending music and code. Today, my focus is removing complexity from the front end and keeping the system running smoothly behind the scenes, whether building APIs in Java or automation scripts.",
+                "stat1.h3": "Focus",
+                "stat1.p": "Backend & Automation",
+                "stat2.h3": "Status",
+                "stat2.p": "Available for Projects",
+                "trajectory.h2": "Journey",
+                "t1.date": "2026.2 - Present",
+                "t1.title": "Computing Manager",
+                "t2.date": "2026.1 - 2026.2",
+                "t2.title": "Project Analyst",
+                "t3.date": "2025.2 - 2026.1",
+                "t3.title": "Project Consultant",
+                "ej.company": "EJ Unicap (Junior Enterprise)",
+                "ej.desc": "Working on the development of technology solutions and consulting. Technical leadership on internal projects and IT demand management.",
+                "t4.date": "2025 - 2028",
+                "t4.title": "Computer Science",
+                "t4.company": "Catholic University of Pernambuco (UNICAP)",
+                "t4.desc": "Bachelor's degree focused on Software and Systems Engineering. Academic development in algorithms and data structures.",
+                "t5.date": "Start",
+                "t5.title": "Self-Directed Studies",
+                "t5.desc": "Development of programming logic fundamentals and first practical projects in Java and automation.",
+                "projects.h2": "Selected Projects",
+                "p1.desc": "Backend for a digital education platform. Robust architecture using Java, Spring Boot, and PostgreSQL. API integration and database modeling.",
+                "p2.desc": "2D engine built from scratch in C++. Focused on low-level architecture, manual memory management, an optimized game loop, and sprite rendering.",
+                "p3.desc": "Complex automation via n8n integrating the Gemini API and Notion. Generates content ideas based on RSS feeds and organizes them automatically.",
+                "p4.desc": 'A 2D game set in a dystopian world. Winner in the "Best Visual" and "Best Jam Game" categories at Poli UPE. Developed by a 5-person team in under 48 hours.',
+                "p5.desc": "Real-time 2D acoustic propagation simulator, GPU-accelerated using Taichi Lang.",
+                "p6.desc": "A high-precision numerical simulation tool in C++ for calculating landing maneuvers (suicide burn) with variable mass and non-uniform gravitational drag. Includes a Python telemetry visualization pipeline.",
+                "p7.desc": "A native compiler built from scratch in pure C, translating structured code directly into x86_64 Assembly. Implements strict lexical scoping via a flat (cache-friendly) symbol table and hardware-level short-circuit flow control.",
+                "p8.title": "Internal EJUNICAP Platform",
+                "p8.desc": "Real-time 2D fluid flow simulator using Lattice Boltzmann Methods (LBM) for high precision, GPU-accelerated with Taichi Lang. Enables interactive visualization of flow patterns and aerodynamic profile optimization.",
+                "p9.title": "Real Wind Tunnel Simulator",
+                "tag.automacao": "Automation",
+                "link.github": "View on GitHub &rarr;",
+                "link.githubcode": "View Code on GitHub &rarr;",
+                "link.fluxo": "View Flow &rarr;",
+                "link.ggj": "View Project on GGJ &rarr;",
+                "certificates.h2": "Recognitions & Certificates",
+                "c1.title": "Winner - Global Game Jam 2026.1 (Poli UPE)",
+                "c1.desc": 'Winning game in the <em>Best Visual</em> and <em>Best Jam Game</em> categories. Built from scratch in under 48 hours by a 5-person team under the global theme "Mask".',
+                "c2.title": "Participant - Global Game Jam 2026.2 (Poli UPE)",
+                "c2.desc": 'Built from scratch in under 48 hours by a 5-person team under the global theme "Mask".',
+                "cert.project": "Project:",
+                "tag.gamedev": "Game Dev",
+                "tag.equipe": "Teamwork",
+                "tag.pressao": "High Pressure",
+                "link.certvalidate": "Validate Original Certificate &rarr;",
+                "skills.h2": "Technical Arsenal",
+                "sk1.h3": "Main Stack (Professional)",
+                "sk2.h3": "Systems Engineering",
+                "sk2.li4": "Data Structures",
+                "sk2.li5": "Algorithms",
+                "sk3.li3": "n8n (Automation)",
+                "sk4.h3": "Management & Data",
+                "sk4.li1": 'Advanced Excel <span class="skill-tag">Dashboard</span>',
+                "sk4.li2": "Process Modeling",
+                "sk4.li3": "Agile Management (Scrum/Kanban)",
+                "sk4.li4": "Requirements Gathering",
+                "sk4.li5": "Process Mapping",
+                "tag.avancado": "Advanced",
+                "tag.academico": "Academic",
+                "tag.estudos": "Studies",
+                "interests.h2": 'Beyond Code <span class="highlight">_</span>',
+                "interests.subtitle": "What I explore when I'm not building APIs.",
+                "interest1.p": 'Active studies in <strong>Purple Teaming</strong>. Familiarity with Kali Linux tools (Nmap, Burp Suite, etc.) and Secure Coding practices (OWASP Top 10).',
+                "interest2.p": "Computer architecture enthusiast. I enjoy understanding how software talks to hardware, occasionally exploring C and Assembly.",
+                "interest3.p": "Active contribution to and use of free/open-source software. I believe in the democratization of code and collaborative learning.",
+                "footer.h2": "Let's build something?",
+                "footer.p": "I'm always open to discussing backend development, hardware, or automation.",
+                "footer.contact": "Get in Touch",
+                "footer.copyright": "&copy; 2026 Built with Skepticism and Code."
+            }
+        };
+
+        function setLang(lang) {
+            const dict = translations[lang];
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key] !== undefined) el.innerHTML = dict[key];
+            });
+
+            document.querySelectorAll('[data-i18n-html]').forEach(el => {
+                const key = el.getAttribute('data-i18n-html');
+                if (dict[key] !== undefined) el.innerHTML = dict[key];
+            });
+
+            document.title = dict.pageTitle;
+            document.documentElement.lang = (lang === 'pt') ? 'pt-BR' : 'en';
+
+            document.getElementById('langPt').classList.toggle('active', lang === 'pt');
+            document.getElementById('langEn').classList.toggle('active', lang === 'en');
+
+            localStorage.setItem('siteLang', lang);
+        }
+
+        // Aplica o idioma salvo (ou o idioma do navegador) ao carregar a página
+        (function initLang() {
+            const saved = localStorage.getItem('siteLang');
+            if (saved) {
+                setLang(saved);
+            } else {
+                const browserLang = navigator.language || navigator.userLanguage || '';
+                setLang(browserLang.toLowerCase().startsWith('pt') ? 'pt' : 'en');
+            }
+        })();
     </script>
 
 </body>
