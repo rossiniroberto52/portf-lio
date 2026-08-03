@@ -329,6 +329,13 @@ h1 {
     transform: translateY(-2px);
 }
 
+/* CTAs do hero — maiores, convidativos */
+.hero .cta-group .btn-primary,
+.hero .cta-group .btn-secondary {
+    font-size: 0.95rem;
+    padding: 16px 30px;
+}
+
 /* ---------- About ---------- */
 .about-grid {
     display: grid;
