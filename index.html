@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | Consultor & Desenvolvedor</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css">
     <meta property="og:title" content="Portfólio | Rossini Roberto">
     <meta property="og:description" content="Backend & Systems Developer | Estudante de Ciência da Computação">
     <meta property="og:image" content="https://imgur.com/oGy5yJo">
@@ -14,7 +15,7 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">rossini@dev<span class="cursor" aria-hidden="true"></span></div>
+        <div class="logo">rossini@dev</div>
         <div class="navbar-right">
             <ul class="nav-links" id="navMenu">
                 <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
@@ -22,6 +23,7 @@
                 <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
                 <li><a href="#certificates" data-i18n="nav.certificates">Certificados</a></li>
                 <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#system" data-i18n="nav.system">Sistema</a></li>
                 <li><a href="#contact" class="btn-contact" data-i18n="nav.contact">Contato</a></li>
             </ul>
             <div class="lang-switch">
@@ -37,18 +39,8 @@
     <header class="hero">
         <div class="hero-content">
 
-            <div class="hero-readout" aria-hidden="true">
-                <span class="ro-item"><b>SYS</b><i class="ok">online</i></span>
-                <span class="ro-item"><b>LAT</b><i>12ms</i></span>
-                <span class="ro-item"><b>REV</b><i>v1.0</i></span>
-                <span class="ro-item ro-live"><b>TRACE</b><span class="ro-wave"></span></span>
-            </div>
-
             <div class="profile-container">
-                <div class="profile-frame">
-                    <img src="./assets/imgs/perfil.jpg" alt="Foto de Perfil" class="profile-pic">
-                    <span class="online-dot" aria-hidden="true"></span>
-                </div>
+                <img src="./assets/imgs/perfil.jpg" alt="Foto de Perfil" class="profile-pic">
             </div>
 
             <span class="badge">Backend & Systems Developer</span>
@@ -62,18 +54,11 @@
             </div>
 
         </div>
-
-        <div class="hero-decor" aria-hidden="true">
-            <span class="hc hc-tl">recife.pe · −8.05 / −34.88</span>
-            <span class="hc hc-tr">sys.online @ rossini</span>
-            <span class="hc hc-bl">&gt; pwd /home/rossini</span>
-            <span class="hc hc-br">rev 0x2c4 · uptime ∞</span>
-        </div>
     </header>
 
     <section id="about" class="section">
         <div class="container">
-            <h2 data-i18n="about.h2" data-eyebrow="ABOUT">Sobre Mim</h2>
+            <h2 data-i18n="about.h2">Sobre Mim</h2>
             <div class="about-grid">
                 <div class="about-text">
                     <p data-i18n-html="about.p1">Atualmente cursando <strong>Ciência da Computação na UNICAP (2025-2028)</strong>, atuo como Analista de Projetos na Empresa Júnior, liderando iniciativas técnicas.</p>
@@ -95,7 +80,7 @@
 
     <section id="trajectory" class="section">
         <div class="container">
-            <h2 data-i18n="trajectory.h2" data-eyebrow="LOG">Trajetória</h2>
+            <h2 data-i18n="trajectory.h2">Trajetória</h2>
             <div class="timeline">
 
                 <div class="timeline-item">
@@ -154,11 +139,11 @@
 
     <section id="projects" class="section bg-dark">
         <div class="container">
-            <h2 data-i18n="projects.h2" data-eyebrow="PROJECTS">Projetos Selecionados</h2>
+            <h2 data-i18n="projects.h2">Projetos Selecionados</h2>
             <div class="project-grid">
 
                 <article class="project-card">
-                    <div class="project-image" data-idx="0x01">
+                    <div class="project-image">
                         <img src="./assets/imgs/eduverse.jpg" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -172,7 +157,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image" data-idx="0x02">
+                    <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="2D C++ Engine" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -186,7 +171,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image" data-idx="0x03">
+                    <div class="project-image">
                         <img src="./assets/imgs/n8n-workflow.png" alt="Automation" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -200,7 +185,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image" data-idx="0x04">
+                    <div class="project-image">
                         <img src="./assets/imgs/DLIF_JAMcape.png" alt="Don't let it fall" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -214,7 +199,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image" data-idx="0x05">
+                    <div class="project-image">
                         <img src="./assets/imgs/sim.png" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -228,7 +213,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image" data-idx="0x06">
+                    <div class="project-image">
                         <img src="./assets/imgs/suicide-burn-graphics.png" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -241,7 +226,7 @@
                     </div>
                 </article>
                 <article class="project-card">
-                    <div class="project-image" data-idx="0x07">
+                    <div class="project-image">
                         <img src="./assets/imgs/quartzlogo.png" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -255,7 +240,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image" data-idx="0x08">
+                    <div class="project-image">
                         <img src="./assets/imgs/ejunicap.jpg" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -269,7 +254,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image" data-idx="0x09">
+                    <div class="project-image">
                         <img src="./assets/imgs/tunel-de-vento.png" alt="Simulation code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -288,7 +273,7 @@
 
     <section id="github" class="section">
         <div class="container">
-            <h2 data-i18n="github.h2" data-eyebrow="GITHUB.FEED">Telemetria do GitHub</h2>
+            <h2 data-i18n="github.h2">Telemetria do GitHub</h2>
             <p class="section-subtitle" data-i18n="github.subtitle">Dados ao vivo do meu perfil público.</p>
 
             <div class="gh-metrics">
@@ -305,11 +290,11 @@
 
     <section id="certificates" class="section">
         <div class="container">
-            <h2 data-i18n="certificates.h2" data-eyebrow="RECORDS">Reconhecimentos & Certificados</h2>
+            <h2 data-i18n="certificates.h2">Reconhecimentos & Certificados</h2>
             <div class="cert-grid">
 
                 <article class="cert-card">
-                    <div class="cert-image" data-num="CERT/001">
+                    <div class="cert-image">
                         <img src="./assets/imgs/certificado-ggj26.jpg" alt="Certificado Global Game Jam 2026" class="clickable-img" onclick="openModal(this.src)">
                     </div>
                     <div class="cert-info">
@@ -324,7 +309,7 @@
                 </article>
 
                 <article class="cert-card">
-                    <div class="cert-image" data-num="CERT/002">
+                    <div class="cert-image">
                         <img src="./assets/imgs/GGJ26.2.png" alt="Certificado Global Game Jam 2026.2" class="clickable-img" onclick="openModal(this.src)">
                     </div>
                     <div class="cert-info">
@@ -344,7 +329,7 @@
 
     <section id="skills" class="section bg-dark">
         <div class="container">
-            <h2 data-i18n="skills.h2" data-eyebrow="STACK">Arsenal Técnico</h2>
+            <h2 data-i18n="skills.h2">Arsenal Técnico</h2>
 
             <div class="skills-wrapper">
 
@@ -397,7 +382,7 @@
 
     <section id="interests" class="section">
         <div class="container">
-            <h2 data-i18n-html="interests.h2" data-eyebrow="SIDE_QUESTS">Beyond Code <span class="highlight">_</span></h2>
+            <h2 data-i18n-html="interests.h2">Beyond Code <span class="highlight">_</span></h2>
             <p class="section-subtitle" data-i18n="interests.subtitle">O que eu exploro quando não estou buildando APIs.</p>
 
             <div class="interests-grid">
@@ -430,9 +415,53 @@
         </div>
     </section>
 
+    <section id="system" class="section">
+        <div class="container">
+            <h2 data-i18n="sys.h2">Meu Setup</h2>
+            <p class="section-subtitle" data-i18n="sys.subtitle">A máquina onde tudo isso é construído.</p>
+
+            <div class="sys-wrap">
+                <div class="terminal">
+                    <div class="terminal-bar">
+                        <span class="t-dot t-r"></span><span class="t-dot t-y"></span><span class="t-dot t-g"></span>
+                        <span class="terminal-title">rossini@arch — zsh</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p class="nf-prompt"><b>rossini@arch</b> <span class="pwd">~</span><span class="dollar">$</span> neofetch</p>
+                        <div class="neofetch">
+<pre class="nf-logo">      /\
+     /  \
+    /    \
+   /      \
+  /   ,,   \
+ /   |  |   \
+/_-''    ''-_\</pre>
+                            <div class="nf-info">
+                                <p class="nf-user">rossini@arch</p>
+                                <p class="nf-sep">─────────────</p>
+                                <p><span class="nf-k">OS</span><span class="nf-v">Arch Linux x86_64</span></p>
+                                <p><span class="nf-k">Kernel</span><span class="nf-v">7.1.5-arch1-2</span></p>
+                                <p><span class="nf-k">Uptime</span><span class="nf-v">6h 13m</span></p>
+                                <p><span class="nf-k">Packages</span><span class="nf-v">1116 (pacman + flatpak)</span></p>
+                                <p><span class="nf-k">Shell</span><span class="nf-v">zsh 5.9.2</span></p>
+                                <p><span class="nf-k">DE</span><span class="nf-v">KDE Plasma 6.7.3 · Wayland</span></p>
+                                <p><span class="nf-k">WM</span><span class="nf-v">KWin</span></p>
+                                <p><span class="nf-k">CPU</span><span class="nf-v">Xeon E5-2630 v4 (20) @ 3.10 GHz</span></p>
+                                <p><span class="nf-k">GPU</span><span class="nf-v">Radeon RX 580 2048SP</span></p>
+                                <p><span class="nf-k">Memory</span><span class="nf-v">15.5 GiB</span></p>
+                                <p><span class="nf-k">Disk</span><span class="nf-v">371 GiB / 657 GiB</span></p>
+                                <p><span class="nf-k">Host</span><span class="nf-v">QIYIDA X99-D4</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer id="contact">
         <div class="container footer-content">
-            <h2 data-i18n="footer.h2" data-eyebrow="CONTACT">Vamos construir algo?</h2>
+            <h2 data-i18n="footer.h2">Vamos construir algo?</h2>
             <p data-i18n="footer.p">Estou sempre aberto a discutir desenvolvimento backend, hardware ou automação.</p>
             <a href="mailto:rossiniroberto52@gmail.com" class="btn-primary" data-i18n="footer.contact">Entrar em Contato</a>
 
@@ -567,6 +596,7 @@
                 "nav.projects": "Projetos",
                 "nav.certificates": "Certificados",
                 "nav.skills": "Skills",
+                "nav.system": "Sistema",
                 "nav.contact": "Contato",
                 "hero.title": 'Resolvendo problemas com <span class="highlight">lógica e código</span>.',
                 "hero.p": "Estudante de Ciência da Computação na UNICAP e Consultor de Projetos na EJ Unicap. Foco em arquitetura de software, automação e desenvolvimento de sistemas robustos.",
@@ -642,6 +672,8 @@
                 "interest2.p": "Entusiasta de arquitetura de computadores. Gosto de entender como o software conversa com o hardware, explorando C e Assembly ocasionalmente.",
                 "interest3.p": "Contribuição e consumo ativo de softwares livres. Acredito na democratização do código e no aprendizado colaborativo.",
                 "footer.h2": "Vamos construir algo?",
+                "sys.h2": "Meu Setup",
+                "sys.subtitle": "A máquina onde tudo isso é construído.",
                 "github.h2": "Telemetria do GitHub",
                 "github.subtitle": "Dados ao vivo do meu perfil público.",
                 "github.offline": "Falha ao carregar dados do GitHub.",
@@ -656,6 +688,7 @@
                 "nav.projects": "Projects",
                 "nav.certificates": "Certificates",
                 "nav.skills": "Skills",
+                "nav.system": "System",
                 "nav.contact": "Contact",
                 "hero.title": 'Solving problems with <span class="highlight">logic and code</span>.',
                 "hero.p": "Computer Science student at UNICAP and Project Consultant at EJ Unicap. Focused on software architecture, automation, and robust systems development.",
@@ -731,6 +764,8 @@
                 "interest2.p": "Computer architecture enthusiast. I enjoy understanding how software talks to hardware, occasionally exploring C and Assembly.",
                 "interest3.p": "Active contribution to and use of free/open-source software. I believe in the democratization of code and collaborative learning.",
                 "footer.h2": "Let's build something?",
+                "sys.h2": "My Setup",
+                "sys.subtitle": "The machine where all of this gets built.",
                 "github.h2": "GitHub Telemetry",
                 "github.subtitle": "Live data from my public profile.",
                 "github.offline": "Could not load GitHub data.",
