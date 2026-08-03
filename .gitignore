@@ -1,0 +1,30 @@
+# ─── Ferramentas de IA (não poluir o repo) ───
+.agents/
+.opencode/
+graphify-out/
+skills-lock.json
+.claude/
+.cursor/
+.cursorrules
+.cursorignore
+.copilot/
+.continue/
+.aider/
+.windsurf/
+.codeium/
+.zed/
+.aixcoder/
+
+# ─── Node / dependências ───
+node_modules/
+package-lock.json
+*.log
+
+# ─── Ambiente / SO ───
+.env
+.env.local
+.env.*.local
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

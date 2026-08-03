@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | Consultor & Desenvolvedor</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
     <meta property="og:title" content="Portfólio | Rossini Roberto">
     <meta property="og:description" content="Backend & Systems Developer | Estudante de Ciência da Computação">
     <meta property="og:image" content="https://imgur.com/oGy5yJo">
@@ -14,9 +14,9 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">DEV.</div>
+        <div class="logo">rossini@dev<span class="cursor" aria-hidden="true"></span></div>
         <div class="navbar-right">
-            <ul class="nav-links">
+            <ul class="nav-links" id="navMenu">
                 <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
                 <li><a href="#trajectory" data-i18n="nav.trajectory">Trajetória</a></li>
                 <li><a href="#projects" data-i18n="nav.projects">Projetos</a></li>
@@ -28,14 +28,27 @@
                 <button id="langPt" class="lang-btn active" onclick="setLang('pt')" aria-label="Português">🇧🇷</button>
                 <button id="langEn" class="lang-btn" onclick="setLang('en')" aria-label="English">🇺🇸</button>
             </div>
+            <button class="hamburger" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
 
+            <div class="hero-readout" aria-hidden="true">
+                <span class="ro-item"><b>SYS</b><i class="ok">online</i></span>
+                <span class="ro-item"><b>LAT</b><i>12ms</i></span>
+                <span class="ro-item"><b>REV</b><i>v1.0</i></span>
+                <span class="ro-item ro-live"><b>TRACE</b><span class="ro-wave"></span></span>
+            </div>
+
             <div class="profile-container">
-                <img src="./assets/imgs/perfil.jpg" alt="Foto de Perfil" class="profile-pic">
+                <div class="profile-frame">
+                    <img src="./assets/imgs/perfil.jpg" alt="Foto de Perfil" class="profile-pic">
+                    <span class="online-dot" aria-hidden="true"></span>
+                </div>
             </div>
 
             <span class="badge">Backend & Systems Developer</span>
@@ -49,11 +62,18 @@
             </div>
 
         </div>
+
+        <div class="hero-decor" aria-hidden="true">
+            <span class="hc hc-tl">recife.pe · −8.05 / −34.88</span>
+            <span class="hc hc-tr">sys.online @ rossini</span>
+            <span class="hc hc-bl">&gt; pwd /home/rossini</span>
+            <span class="hc hc-br">rev 0x2c4 · uptime ∞</span>
+        </div>
     </header>
 
     <section id="about" class="section">
         <div class="container">
-            <h2 data-i18n="about.h2">Sobre Mim</h2>
+            <h2 data-i18n="about.h2" data-eyebrow="ABOUT">Sobre Mim</h2>
             <div class="about-grid">
                 <div class="about-text">
                     <p data-i18n-html="about.p1">Atualmente cursando <strong>Ciência da Computação na UNICAP (2025-2028)</strong>, atuo como Analista de Projetos na Empresa Júnior, liderando iniciativas técnicas.</p>
@@ -75,7 +95,7 @@
 
     <section id="trajectory" class="section">
         <div class="container">
-            <h2 data-i18n="trajectory.h2">Trajetória</h2>
+            <h2 data-i18n="trajectory.h2" data-eyebrow="LOG">Trajetória</h2>
             <div class="timeline">
 
                 <div class="timeline-item">
@@ -134,11 +154,11 @@
 
     <section id="projects" class="section bg-dark">
         <div class="container">
-            <h2 data-i18n="projects.h2">Projetos Selecionados</h2>
+            <h2 data-i18n="projects.h2" data-eyebrow="PROJECTS">Projetos Selecionados</h2>
             <div class="project-grid">
 
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" data-idx="0x01">
                         <img src="./assets/imgs/eduverse.jpg" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -152,7 +172,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" data-idx="0x02">
                         <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="2D C++ Engine" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -166,7 +186,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" data-idx="0x03">
                         <img src="./assets/imgs/n8n-workflow.png" alt="Automation" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -180,7 +200,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" data-idx="0x04">
                         <img src="./assets/imgs/DLIF_JAMcape.png" alt="Don't let it fall" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -194,7 +214,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" data-idx="0x05">
                         <img src="./assets/imgs/sim.png" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -208,7 +228,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" data-idx="0x06">
                         <img src="./assets/imgs/suicide-burn-graphics.png" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -221,7 +241,7 @@
                     </div>
                 </article>
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" data-idx="0x07">
                         <img src="./assets/imgs/quartzlogo.png" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -235,7 +255,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" data-idx="0x08">
                         <img src="./assets/imgs/ejunicap.jpg" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -249,7 +269,7 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" data-idx="0x09">
                         <img src="./assets/imgs/tunel-de-vento.png" alt="Simulation code" class="img-fluid">
                     </div>
                     <div class="project-info">
@@ -266,13 +286,30 @@
         </div>
     </section>
 
+    <section id="github" class="section">
+        <div class="container">
+            <h2 data-i18n="github.h2" data-eyebrow="GITHUB.FEED">Telemetria do GitHub</h2>
+            <p class="section-subtitle" data-i18n="github.subtitle">Dados ao vivo do meu perfil público.</p>
+
+            <div class="gh-metrics">
+                <div class="gh-stat"><b>REPOS</b><span class="gh-val is-loading" data-stat="repos">···</span></div>
+                <div class="gh-stat"><b>FOLLOWERS</b><span class="gh-val is-loading" data-stat="followers">···</span></div>
+                <div class="gh-stat"><b>STARS</b><span class="gh-val is-loading" data-stat="stars">···</span></div>
+                <div class="gh-stat"><b>LAST PUSH</b><span class="gh-val is-loading" data-stat="lastPush">···</span></div>
+            </div>
+
+            <div class="gh-repos" id="ghRepos" aria-live="polite"></div>
+            <p class="gh-fallback" id="ghFallback" hidden data-i18n="github.offline">Falha ao carregar dados do GitHub.</p>
+        </div>
+    </section>
+
     <section id="certificates" class="section">
         <div class="container">
-            <h2 data-i18n="certificates.h2">Reconhecimentos & Certificados</h2>
+            <h2 data-i18n="certificates.h2" data-eyebrow="RECORDS">Reconhecimentos & Certificados</h2>
             <div class="cert-grid">
 
                 <article class="cert-card">
-                    <div class="cert-image">
+                    <div class="cert-image" data-num="CERT/001">
                         <img src="./assets/imgs/certificado-ggj26.jpg" alt="Certificado Global Game Jam 2026" class="clickable-img" onclick="openModal(this.src)">
                     </div>
                     <div class="cert-info">
@@ -287,7 +324,7 @@
                 </article>
 
                 <article class="cert-card">
-                    <div class="cert-image">
+                    <div class="cert-image" data-num="CERT/002">
                         <img src="./assets/imgs/GGJ26.2.png" alt="Certificado Global Game Jam 2026.2" class="clickable-img" onclick="openModal(this.src)">
                     </div>
                     <div class="cert-info">
@@ -307,7 +344,7 @@
 
     <section id="skills" class="section bg-dark">
         <div class="container">
-            <h2 data-i18n="skills.h2">Arsenal Técnico</h2>
+            <h2 data-i18n="skills.h2" data-eyebrow="STACK">Arsenal Técnico</h2>
 
             <div class="skills-wrapper">
 
@@ -360,7 +397,7 @@
 
     <section id="interests" class="section">
         <div class="container">
-            <h2 data-i18n-html="interests.h2">Beyond Code <span class="highlight">_</span></h2>
+            <h2 data-i18n-html="interests.h2" data-eyebrow="SIDE_QUESTS">Beyond Code <span class="highlight">_</span></h2>
             <p class="section-subtitle" data-i18n="interests.subtitle">O que eu exploro quando não estou buildando APIs.</p>
 
             <div class="interests-grid">
@@ -395,7 +432,7 @@
 
     <footer id="contact">
         <div class="container footer-content">
-            <h2 data-i18n="footer.h2">Vamos construir algo?</h2>
+            <h2 data-i18n="footer.h2" data-eyebrow="CONTACT">Vamos construir algo?</h2>
             <p data-i18n="footer.p">Estou sempre aberto a discutir desenvolvimento backend, hardware ou automação.</p>
             <a href="mailto:rossiniroberto52@gmail.com" class="btn-primary" data-i18n="footer.contact">Entrar em Contato</a>
 
@@ -423,6 +460,101 @@
         function closeModal() {
             document.getElementById('imageModal').style.display = "none";
         }
+    </script>
+
+    <script>
+        // ===== Menu mobile =====
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        function toggleMenu(force) {
+            const open = (force !== undefined) ? force : !navMenu.classList.contains('open');
+            navMenu.classList.toggle('open', open);
+            menuToggle.classList.toggle('active', open);
+            menuToggle.setAttribute('aria-expanded', open);
+            menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+        }
+
+        menuToggle.addEventListener('click', () => toggleMenu());
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.closest('a')) toggleMenu(false);
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') toggleMenu(false);
+        });
+    </script>
+
+    <script>
+        // ===== Telemetria do GitHub (dados ao vivo) =====
+        const GH_USER = 'rossiniroberto52';
+        const LANG_COLORS = {
+            'Java': '#b07219', 'Python': '#3572A5', 'C++': '#f34b7d', 'C': '#555555',
+            'Rust': '#dea584', 'Shell': '#89e051', 'JavaScript': '#f1e05a',
+            'TypeScript': '#3178c6', 'Jupyter Notebook': '#DA5B0B', 'TeX': '#3D6117'
+        };
+        const GH_FALLBACK_COLOR = '#93a1ad';
+
+        function ghTimeAgo(iso) {
+            if (!iso) return '—';
+            const s = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
+            if (s < 60) return s + 's';
+            const m = Math.floor(s / 60);
+            if (m < 60) return m + 'm';
+            const h = Math.floor(m / 60);
+            if (h < 24) return h + 'h';
+            const d = Math.floor(h / 24);
+            if (d < 30) return d + 'd';
+            return new Date(iso).toISOString().slice(0, 10);
+        }
+
+        function ghSetStat(key, val) {
+            const el = document.querySelector(`[data-stat="${key}"]`);
+            if (el) {
+                el.textContent = val;
+                el.classList.remove('is-loading');
+            }
+        }
+
+        async function loadGitHub() {
+            try {
+                const [user, repos] = await Promise.all([
+                    fetch(`https://api.github.com/users/${GH_USER}`).then(r => r.json()),
+                    fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`).then(r => r.json())
+                ]);
+                if (user.message || !Array.isArray(repos)) throw new Error('api');
+
+                const totalStars = repos.reduce((a, r) => a + (r.stargazers_count || 0), 0);
+                const top = repos
+                    .filter(r => !r.fork && r.name.toLowerCase() !== GH_USER.toLowerCase())
+                    .slice(0, 4);
+
+                ghSetStat('repos', user.public_repos ?? repos.length);
+                ghSetStat('followers', user.followers ?? '—');
+                ghSetStat('stars', totalStars);
+                ghSetStat('lastPush', ghTimeAgo(repos[0]?.pushed_at));
+
+                document.getElementById('ghRepos').innerHTML = top.map(r => {
+                    const desc = (r.description || '').replace(/</g, '&lt;').replace(/>/g, '&gt;') || '—';
+                    const color = LANG_COLORS[r.language] || GH_FALLBACK_COLOR;
+                    return `
+                        <a class="gh-repo" href="${r.html_url}" target="_blank" rel="noopener">
+                            <span class="gh-repo-name">${r.name}</span>
+                            <span class="gh-repo-desc">${desc}</span>
+                            <span class="gh-repo-meta">
+                                <span class="dot-lang" style="--lang:${color}"></span>
+                                ${r.language || '—'}
+                                <span class="gh-star">★ ${r.stargazers_count}</span>
+                                <span class="gh-fork">fork ${r.forks_count}</span>
+                            </span>
+                        </a>`;
+                }).join('');
+            } catch (e) {
+                const fb = document.getElementById('ghFallback');
+                if (fb) fb.hidden = false;
+            }
+        }
+
+        loadGitHub();
     </script>
 
     <script>
@@ -510,6 +642,9 @@
                 "interest2.p": "Entusiasta de arquitetura de computadores. Gosto de entender como o software conversa com o hardware, explorando C e Assembly ocasionalmente.",
                 "interest3.p": "Contribuição e consumo ativo de softwares livres. Acredito na democratização do código e no aprendizado colaborativo.",
                 "footer.h2": "Vamos construir algo?",
+                "github.h2": "Telemetria do GitHub",
+                "github.subtitle": "Dados ao vivo do meu perfil público.",
+                "github.offline": "Falha ao carregar dados do GitHub.",
                 "footer.p": "Estou sempre aberto a discutir desenvolvimento backend, hardware ou automação.",
                 "footer.contact": "Entrar em Contato",
                 "footer.copyright": "&copy; 2026 Desenvolvido com Ceticismo e Código."
@@ -596,6 +731,9 @@
                 "interest2.p": "Computer architecture enthusiast. I enjoy understanding how software talks to hardware, occasionally exploring C and Assembly.",
                 "interest3.p": "Active contribution to and use of free/open-source software. I believe in the democratization of code and collaborative learning.",
                 "footer.h2": "Let's build something?",
+                "github.h2": "GitHub Telemetry",
+                "github.subtitle": "Live data from my public profile.",
+                "github.offline": "Could not load GitHub data.",
                 "footer.p": "I'm always open to discussing backend development, hardware, or automation.",
                 "footer.contact": "Get in Touch",
                 "footer.copyright": "&copy; 2026 Built with Skepticism and Code."
