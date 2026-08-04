@@ -332,11 +332,13 @@
     <section id="skills" class="section bg-dark">
         <div class="container">
             <h2 data-i18n="skills.h2">Arsenal Técnico</h2>
+            <div class="arsenal-cmd"><span class="host">rossini@arch</span>:~$ tree arsenal/<span class="cursor" aria-hidden="true"></span></div>
 
             <div class="skills-wrapper">
 
                 <div class="skill-category">
                     <h3 data-i18n="sk1.h3">Main Stack (Profissional)</h3>
+                    <div class="skill-prompt">rossini@arch:~/arsenal/stack$</div>
                     <ul class="skill-list">
                         <li><strong>Java</strong> <span class="skill-tag" data-i18n="tag.avancado">Avançado</span></li>
                         <li><strong>Python</strong> <span class="skill-tag" data-i18n="tag.avancado">Avançado</span></li>
@@ -348,22 +350,31 @@
 
                 <div class="skill-category">
                     <h3 data-i18n="sk2.h3">Engenharia de Sistemas</h3>
+                    <div class="skill-prompt">rossini@arch:~/arsenal/systems$</div>
                     <ul class="skill-list">
                         <li>C++ <span class="skill-tag" data-i18n="tag.academico">Acadêmico</span></li>
                         <li>C <span class="skill-tag" data-i18n="tag.academico">Acadêmico</span></li>
                         <li>Rust <span class="skill-tag" data-i18n="tag.estudos">Estudos</span></li>
                         <li data-i18n="sk2.li4">Estrutura de Dados</li>
                         <li data-i18n="sk2.li5">Algoritmos</li>
+                        <li>Unity Engine</li>
                     </ul>
                 </div>
 
                 <div class="skill-category">
                     <h3>Tools & Workflow</h3>
+                    <div class="skill-prompt">rossini@arch:~/arsenal/tools$</div>
                     <ul class="skill-list">
                         <li><strong>Docker</strong></li> <li>Git / GitHub</li>
                         <li data-i18n="sk3.li3">n8n (Automação)</li>
                         <li>Linux (Server/Terminal)</li>
-                        <li>Unity Engine</li>
+                    </ul>
+                </div>
+
+                <div class="skill-category">
+                    <h3 data-i18n="sk5.h3">Ferramentas & Agentes de IA</h3>
+                    <div class="skill-prompt">rossini@arch:~/arsenal/ai-agents$</div>
+                    <ul class="skill-list">
                         <li>Claude Code</li>
                         <li>OpenCode</li>
                     </ul>
@@ -371,6 +382,7 @@
 
                 <div class="skill-category">
                     <h3 data-i18n="sk4.h3">Gestão & Dados</h3>
+                    <div class="skill-prompt">rossini@arch:~/arsenal/mgmt$</div>
                     <ul class="skill-list">
                         <li data-i18n="sk4.li1">Excel Avançado <span class="skill-tag">DashBoard</span></li>
                         <li data-i18n="sk4.li2">Modelagem de Processos</li>
@@ -425,6 +437,8 @@
             <p class="section-subtitle" data-i18n="sys.subtitle">A máquina onde tudo isso é construído.</p>
 
             <div class="sys-wrap">
+                <div class="sys-grid">
+
                 <div class="terminal">
                     <div class="terminal-bar">
                         <span class="t-dot t-r"></span><span class="t-dot t-y"></span><span class="t-dot t-g"></span>
@@ -458,6 +472,22 @@
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="terminal terminal-live" aria-label="Terminal interativo">
+                    <div class="terminal-bar">
+                        <span class="t-dot t-r"></span><span class="t-dot t-y"></span><span class="t-dot t-g"></span>
+                        <span class="terminal-title">rossini@arch — zsh</span>
+                    </div>
+                    <div class="terminal-body live-body" id="liveBody">
+                        <p class="live-line live-hint" data-i18n="term.hint">Dica: digite <b class="live-cmd">help</b> para ver os comandos.</p>
+                        <p class="live-line live-input-line">
+                            <b class="live-user">rossini@arch</b> <span class="live-path">~</span><span class="live-dollar">$</span>
+                            <input class="live-input" id="liveInput" type="text" spellcheck="false" autocomplete="off" autocapitalize="off" aria-label="Digite um comando">
+                        </p>
+                    </div>
+                </div>
+
                 </div>
             </div>
         </div>
@@ -662,6 +692,7 @@
                 "sk2.li4": "Estrutura de Dados",
                 "sk2.li5": "Algoritmos",
                 "sk3.li3": "n8n (Automação)",
+                "sk5.h3": "Ferramentas & Agentes de IA",
                 "sk4.h3": "Gestão & Dados",
                 "sk4.li1": 'Office Avançado <span class="skill-tag">DashBoard</span>',
                 "sk4.li2": "Modelagem de Processos",
@@ -679,6 +710,16 @@
                 "footer.h2": "Vamos construir algo?",
                 "sys.h2": "Meu Setup",
                 "sys.subtitle": "A máquina onde tudo isso é construído.",
+                "term.hint": 'Dica: digite <b class="live-cmd">help</b> para ver os comandos.',
+                "term.help": "Comandos: whoami · about · skills · projects · contact · cv · neofetch · sudo · echo · date · clear",
+                "term.whoami": "rossini.roberto — Backend & Systems Developer · Gerente @ EJ Unicap",
+                "term.about": "CS @ UNICAP (2025–2028). APIs em Java, automação e arquiteturas estáveis. Agentes de IA no fluxo diário.",
+                "term.projects": "Eduverse · 2D Engine · n8n Automation · Compiler in C · Fluid Sims — todos no github.com/rossiniroberto52",
+                "term.contact": "email: rossiniroberto52@gmail.com · github: rossiniroberto52 · linkedin: rossini-roberto",
+                "term.cv": "Baixar CV: ./assets/docs/CV_Rossini_Roberto_Backend_DEV_PT.pdf",
+                "term.sudo": "rossini não está no arquivo sudoers. Este incidente será reportado.",
+                "term.neofetch": "A versão completa desse comando está rodando no painel ao lado — sem truque, só zsh.",
+                "term.unknown": "zsh: command not found: {cmd} — digite 'help'",
                 "github.h2": "Telemetria do GitHub",
                 "github.subtitle": "Dados ao vivo do meu perfil público.",
                 "github.offline": "Falha ao carregar dados do GitHub.",
@@ -754,6 +795,7 @@
                 "sk2.li4": "Data Structures",
                 "sk2.li5": "Algorithms",
                 "sk3.li3": "n8n (Automation)",
+                "sk5.h3": "AI Tools & Agents",
                 "sk4.h3": "Management & Data",
                 "sk4.li1": 'Advanced Office <span class="skill-tag">Dashboard</span>',
                 "sk4.li2": "Process Modeling",
@@ -771,6 +813,16 @@
                 "footer.h2": "Let's build something?",
                 "sys.h2": "My Setup",
                 "sys.subtitle": "The machine where all of this gets built.",
+                "term.hint": 'Tip: type <b class="live-cmd">help</b> to see the commands.',
+                "term.help": "Commands: whoami · about · skills · projects · contact · cv · neofetch · sudo · echo · date · clear",
+                "term.whoami": "rossini.roberto — Backend & Systems Developer · Manager @ EJ Unicap",
+                "term.about": "CS @ UNICAP (2025–2028). Java APIs, automation, and stable architectures. AI agents in the daily flow.",
+                "term.projects": "Eduverse · 2D Engine · n8n Automation · Compiler in C · Fluid Sims — all on github.com/rossiniroberto52",
+                "term.contact": "email: rossiniroberto52@gmail.com · github: rossiniroberto52 · linkedin: rossini-roberto",
+                "term.cv": "Download CV: ./assets/docs/CV_Rossini_Roberto_Backend_DEV_EN.pdf",
+                "term.sudo": "rossini is not in the sudoers file. This incident will be reported.",
+                "term.neofetch": "The full output of this command is running in the panel next door — no trick, just zsh.",
+                "term.unknown": "zsh: command not found: {cmd} — type 'help'",
                 "github.h2": "GitHub Telemetry",
                 "github.subtitle": "Live data from my public profile.",
                 "github.offline": "Could not load GitHub data.",
@@ -819,6 +871,119 @@
                 const browserLang = navigator.language || navigator.userLanguage || '';
                 setLang(browserLang.toLowerCase().startsWith('pt') ? 'pt' : 'en');
             }
+        })();
+    </script>
+
+    <script>
+        // ===== Terminal interativo =====
+        (function () {
+            const body = document.getElementById('liveBody');
+            const input = document.getElementById('liveInput');
+            if (!body || !input) return;
+
+            const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            const lang = () => document.documentElement.lang.startsWith('pt') ? 'pt' : 'en';
+            const t = key => (translations[lang()] && translations[lang()][key]) || '';
+
+            const promptHTML = cmd =>
+                '<b class="live-user">rossini@arch</b> <span class="live-path">~</span><span class="live-dollar">$</span> ' +
+                (cmd ? '<span class="live-cmd">' + esc(cmd) + '</span>' : '');
+
+            function add(html) {
+                const p = document.createElement('p');
+                p.className = 'live-line';
+                p.innerHTML = html;
+                body.insertBefore(p, input.closest('.live-input-line'));
+                body.scrollTop = body.scrollHeight;
+            }
+
+            function out(text) {
+                add('<span class="live-out">' + esc(text) + '</span>');
+            }
+
+            const arsenal = () => [
+                '<span class="live-path">~/arsenal/</span>',
+                '├── stack/',
+                '├── systems/',
+                '├── tools/',
+                '├── ai-agents/',
+                '└── mgmt/'
+            ];
+
+            const neo = () => [
+                '     /\\',
+                '    /  \\',
+                '   /    \\',
+                '  /  ,,  \\',
+                ' /  |  |  \\',
+                "/_-''    ''-_\\",
+                t('term.neofetch')
+            ];
+
+            function run(rawCmd) {
+                add(promptHTML(rawCmd));
+                const parts = rawCmd.trim().split(/\s+/);
+                const cmd = (parts[0] || '').toLowerCase();
+                const args = parts.slice(1);
+
+                switch (cmd) {
+                    case 'help':
+                        t('term.help').split('·').forEach(x => out(x.trim()));
+                        break;
+                    case 'whoami': out(t('term.whoami')); break;
+                    case 'about': out(t('term.about')); break;
+                    case 'skills':
+                    case 'ls':
+                    case 'arsenal': arsenal().forEach(add); break;
+                    case 'projects': out(t('term.projects')); break;
+                    case 'contact': out(t('term.contact')); break;
+                    case 'cv': out(t('term.cv')); break;
+                    case 'neofetch': neo().forEach(add); break;
+                    case 'sudo': out(t('term.sudo')); break;
+                    case 'echo': out(args.join(' ')); break;
+                    case 'date': out(new Date().toLocaleString(lang() === 'pt' ? 'pt-BR' : 'en-US')); break;
+                    case 'clear':
+                        body.querySelectorAll('.live-line:not(.live-input-line):not(.live-hint)').forEach(n => n.remove());
+                        break;
+                    default:
+                        out(t('term.unknown').replace('{cmd}', rawCmd.trim() || ''));
+                }
+            }
+
+            const history = [];
+            let histIdx = 0;
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    const v = input.value;
+                    input.value = '';
+                    if (v.trim()) {
+                        history.push(v);
+                        histIdx = history.length;
+                        run(v);
+                    } else {
+                        add(promptHTML(''));
+                    }
+                    body.scrollTop = body.scrollHeight;
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (history.length && histIdx > 0) {
+                        histIdx--;
+                        input.value = history[histIdx];
+                    }
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (histIdx < history.length - 1) {
+                        histIdx++;
+                        input.value = history[histIdx];
+                    } else {
+                        histIdx = history.length;
+                        input.value = '';
+                    }
+                }
+            });
+
+            body.addEventListener('click', () => input.focus());
         })();
     </script>
 
