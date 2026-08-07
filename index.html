@@ -14,6 +14,10 @@
 </head>
 <body>
 
+    <div class="bg-fx" aria-hidden="true">
+        <div class="bg-blob bg-blob-a"></div>
+    </div>
+
     <nav class="navbar">
         <div class="logo">rossini@dev</div>
         <div class="navbar-right">
@@ -27,31 +31,37 @@
                 <li><a href="#contact" class="btn-contact" data-i18n="nav.contact">Contato</a></li>
             </ul>
             <div class="lang-switch">
-                <button id="langPt" class="lang-btn active" onclick="setLang('pt')" aria-label="Português">🇧🇷</button>
-                <button id="langEn" class="lang-btn" onclick="setLang('en')" aria-label="English">🇺🇸</button>
+                <button id="langPt" class="lang-btn active" onclick="setLang('pt')" aria-label="Português">PT</button>
+                <button id="langEn" class="lang-btn" onclick="setLang('en')" aria-label="English">EN</button>
             </div>
             <button class="hamburger" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </div>
+        <div class="nav-progress" id="scrollProgress" aria-hidden="true"></div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
 
-            <div class="profile-container">
+            <div class="profile-container" data-reveal>
                 <img src="./assets/imgs/perfil.jpg" alt="Foto de Perfil" class="profile-pic">
             </div>
 
-            <span class="badge">Backend & Systems Developer</span>
-            <h1 data-i18n-html="hero.title">Resolvendo problemas com <span class="highlight">lógica e código</span>.</h1>
-            <p data-i18n="hero.p">Estudante de Ciência da Computação na UNICAP e Gerente na EJ Unicap. Foco em arquitetura de software, automação e desenvolvimento de sistemas robustos.</p>
+            <span class="badge" data-reveal style="--reveal-delay:.08s">Backend & Systems Developer</span>
+            <h1 data-i18n-html="hero.title" data-reveal style="--reveal-delay:.16s">Resolvendo problemas com <span class="highlight">lógica e código</span>.</h1>
+            <p data-i18n="hero.p" data-reveal style="--reveal-delay:.24s">Estudante de Ciência da Computação na UNICAP e Gerente na EJ Unicap. Foco em arquitetura de software, automação e desenvolvimento de sistemas robustos.</p>
 
-            <div class="cta-group">
+            <div class="cta-group" data-reveal style="--reveal-delay:.32s">
                 <a href="#projects" class="btn-primary" data-i18n="hero.cta1">Ver Projetos</a>
                 <a href="./assets/docs/CV_Rossini_Roberto_Backend_DEV_PT.pdf" target="_blank" class="btn-secondary" data-cv-link data-i18n="hero.cta2">Baixar CV</a>
                 <a href="https://github.com/rossiniroberto52" target="_blank" class="btn-secondary">GitHub</a>
                 <a href="https://www.linkedin.com/in/rossini-roberto" target="_blank" class="btn-secondary">LinkedIn</a>
+            </div>
+
+            <div class="hero-status" data-reveal style="--reveal-delay:.4s">
+                <span class="status-dot" aria-hidden="true"></span>
+                <span data-i18n="hero.status">Disponível para novos projetos</span>
             </div>
 
         </div>
@@ -61,12 +71,12 @@
         <div class="container">
             <h2 data-i18n="about.h2">Sobre Mim</h2>
             <div class="about-grid">
-                <div class="about-text">
+                <div class="about-text" data-reveal>
                     <p data-i18n-html="about.p1">Curso <strong>Ciência da Computação na UNICAP</strong> (2025–2028) e atuo como Gerente na EJ Unicap, liderando a área de computação e ajudando a transformar ideias em sistemas que funcionam de verdade.</p>
                     <p data-i18n="about.p2">O interesse por código começou aos 8 anos, quando música e computador se cruzaram pela primeira vez. Hoje, meu trabalho mora nos bastidores: APIs em Java, automações e arquiteturas desenhadas para rodar com estabilidade e o mínimo de atrito.</p>
                     <p data-i18n="about.p3">Uso ferramentas de IA e agentes de código (Claude Code, OpenCode e afins) no dia a dia de desenvolvimento — desde prototipagem até automação de tarefas repetitivas.</p>
                 </div>
-                <div class="about-stats">
+                <div class="about-stats" data-reveal style="--reveal-delay:.12s">
                     <div class="stat-card">
                         <h3 data-i18n="stat1.h3">Foco</h3>
                         <p data-i18n="stat1.p">Backend & Automação</p>
@@ -85,7 +95,7 @@
             <h2 data-i18n="trajectory.h2">Trajetória</h2>
             <div class="timeline">
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-reveal>
                     <div class="timeline-dot"></div>
                     <div class="timeline-date" data-i18n="t1.date">2026.2 - Presente</div>
                     <div class="timeline-content">
@@ -95,7 +105,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-reveal>
                     <div class="timeline-dot"></div>
                     <div class="timeline-date" data-i18n="t2.date">2026.1 - 2026.2</div>
                     <div class="timeline-content">
@@ -105,7 +115,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-reveal>
                     <div class="timeline-dot"></div>
                     <div class="timeline-date" data-i18n="t3.date">2025.2 - 2026.1</div>
                     <div class="timeline-content">
@@ -115,7 +125,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-reveal>
                     <div class="timeline-dot"></div>
                     <div class="timeline-date" data-i18n="t4.date">2025 - 2028</div>
                     <div class="timeline-content">
@@ -125,7 +135,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
+                <div class="timeline-item" data-reveal>
                     <div class="timeline-dot"></div>
                     <div class="timeline-date" data-i18n="t5.date">Início</div>
                     <div class="timeline-content">
@@ -144,7 +154,7 @@
             <h2 data-i18n="projects.h2">Projetos Selecionados</h2>
             <div class="project-grid">
 
-                <article class="project-card">
+                <article class="project-card" data-reveal>
                     <div class="project-image">
                         <img src="./assets/imgs/eduverse.jpg" alt="Backend Code" class="img-fluid">
                     </div>
@@ -158,7 +168,7 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-reveal>
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="2D C++ Engine" class="img-fluid">
                     </div>
@@ -172,7 +182,7 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-reveal>
                     <div class="project-image">
                         <img src="./assets/imgs/n8n-workflow.png" alt="Automation" class="img-fluid">
                     </div>
@@ -186,7 +196,7 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-reveal>
                     <div class="project-image">
                         <img src="./assets/imgs/DLIF_JAMcape.png" alt="Don't let it fall" class="img-fluid">
                     </div>
@@ -200,7 +210,7 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-reveal>
                     <div class="project-image">
                         <img src="./assets/imgs/sim.png" alt="Backend Code" class="img-fluid">
                     </div>
@@ -214,7 +224,7 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-reveal>
                     <div class="project-image">
                         <img src="./assets/imgs/suicide-burn-graphics.png" alt="Backend Code" class="img-fluid">
                     </div>
@@ -227,7 +237,7 @@
                         <a href="https://github.com/rossiniroberto52/Orbital-Maneuver-Solver" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
                     </div>
                 </article>
-                <article class="project-card">
+                <article class="project-card" data-reveal>
                     <div class="project-image">
                         <img src="./assets/imgs/quartzlogo.png" alt="Backend Code" class="img-fluid">
                     </div>
@@ -241,13 +251,13 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-reveal>
                     <div class="project-image">
                         <img src="./assets/imgs/ejunicap.jpg" alt="Backend Code" class="img-fluid">
                     </div>
                     <div class="project-info">
                         <h3 data-i18n="p8.title">Plataforma interna EJUNICAP</h3>
-                        <p data-i18n="p8.desc">Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.</p>
+                        <p data-i18n="p8.desc">Plataforma interna da EJ Unicap para gerenciar demandas, clientes e projetos da empresa júnior. Backend em Python/FastAPI com PostgreSQL, desenhada para rodar a operação do dia a dia.</p>
                         <div class="tags">
                             <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>CRM/ERP</span>
                         </div>
@@ -255,17 +265,58 @@
                     </div>
                 </article>
 
-                <article class="project-card">
+                <article class="project-card" data-reveal>
                     <div class="project-image">
                         <img src="./assets/imgs/tunel-de-vento.png" alt="Simulation code" class="img-fluid">
                     </div>
                     <div class="project-info">
                         <h3 data-i18n="p9.title">Simulador de túnel de vento real</h3>
-                        <p data-i18n="p8.desc">Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.</p>
+                        <p data-i18n="p9.desc">Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.</p>
                         <div class="tags">
                             <span>Python</span><span>Taichi Lang</span><span>GPU Computing</span><span>C/C++</span><span>Physics</span>
                         </div>
                         <a href="https://github.com/rossiniroberto52/tunel-de-vento" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-reveal>
+                    <div class="project-image">
+                        <svg class="img-fluid" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder do projeto calc-visualizer" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="800" height="500" fill="#0e1219"/>
+                            <g stroke="rgba(230,236,242,0.05)" stroke-width="1">
+                                <line x1="40" y1="0" x2="40" y2="500"/><line x1="120" y1="0" x2="120" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/><line x1="280" y1="0" x2="280" y2="500"/><line x1="360" y1="0" x2="360" y2="500"/><line x1="440" y1="0" x2="440" y2="500"/><line x1="520" y1="0" x2="520" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/><line x1="680" y1="0" x2="680" y2="500"/><line x1="760" y1="0" x2="760" y2="500"/>
+                                <line x1="0" y1="40" x2="800" y2="40"/><line x1="0" y1="120" x2="800" y2="120"/><line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="280" x2="800" y2="280"/><line x1="0" y1="360" x2="800" y2="360"/><line x1="0" y1="440" x2="800" y2="440"/>
+                            </g>
+                            <line x1="40" y1="500" x2="40" y2="20" stroke="rgba(230,236,242,0.16)" stroke-width="1.5"/>
+                            <line x1="40" y1="300" x2="760" y2="300" stroke="rgba(230,236,242,0.16)" stroke-width="1.5"/>
+                            <polyline points="40,304 60,300 80,303 100,313 120,329 140,348 160,369 180,389 200,405 220,416 240,420 260,417 280,407 300,391 320,372 340,351 360,331 380,315 400,304 420,300 440,303 460,313 480,329 500,348 520,369 540,389 560,405 580,416 600,420 620,417 640,407 660,391 680,372 700,351 720,331 740,315 760,304" fill="none" stroke="rgba(62,207,142,0.4)" stroke-width="1.5"/>
+                            <polyline points="40,300 60,256 80,216 100,187 120,172 140,172 160,187 180,216 200,256 220,300 240,344 260,384 280,413 300,428 320,428 340,413 360,384 380,344 400,300 420,256 440,216 460,187 480,172 500,172 520,187 540,216 560,256 580,300 600,344 620,384 640,413 660,428 680,428 700,413 720,384 740,344 760,300" fill="none" stroke="#efe5cf" stroke-width="2.5"/>
+                            <circle cx="40" cy="300" r="4" fill="#efe5cf"/>
+                            <text x="52" y="286" font-family="'Hack',monospace" font-size="26" fill="#efe5cf">f(x) = x² + 3x − 5</text>
+                            <text x="52" y="330" font-family="'Hack',monospace" font-size="16" fill="rgba(230,236,242,0.5)">LaTeX → SymPy → 2D/3D</text>
+                        </svg>
+                    </div>
+                    <div class="project-info">
+                        <h3>Calc Visualizer</h3>
+                        <p data-i18n="p10.desc">Notebook matemático local estilo Jupyter/Colab. Você digita LaTeX, o backend converte para SymPy e resolve simbolicamente (integrais, derivadas, limites) devolvendo o resultado e os pontos para gráficos 2D (Plotly) e 3D (Three.js) orbitáveis.</p>
+                        <div class="tags">
+                            <span>Python</span><span>FastAPI</span><span>SymPy</span><span>React</span><span>LaTeX</span>
+                        </div>
+                        <a href="https://github.com/rossiniroberto52/calc-visualizer" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="project-card" data-reveal>
+                    <div class="project-image">
+                        <img src="./assets/imgs/ejunicap.jpg" alt="Agente Telegram EJ" class="img-fluid">
+                    </div>
+                    <div class="project-info">
+                        <h3>Agente Telegram EJ</h3>
+                        <p data-i18n="p11.desc">Bot de Telegram com RAG que centraliza os documentos da EJ Unicap e usa LLM para responder perguntas, mantendo o conhecimento da empresa sempre acessível e atualizado.</p>
+                        <div class="tags">
+                            <span>Python</span><span>Telegram</span><span>RAG</span><span>LLM</span><span>Docker</span>
+                        </div>
+                        <a href="https://github.com/rossiniroberto52/agente_telegram_ej" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
                     </div>
                 </article>
 
@@ -279,10 +330,10 @@
             <p class="section-subtitle" data-i18n="github.subtitle">Dados ao vivo do meu perfil público.</p>
 
             <div class="gh-metrics">
-                <div class="gh-stat"><b>REPOS</b><span class="gh-val is-loading" data-stat="repos">···</span></div>
-                <div class="gh-stat"><b>FOLLOWERS</b><span class="gh-val is-loading" data-stat="followers">···</span></div>
-                <div class="gh-stat"><b>STARS</b><span class="gh-val is-loading" data-stat="stars">···</span></div>
-                <div class="gh-stat"><b>LAST PUSH</b><span class="gh-val is-loading" data-stat="lastPush">···</span></div>
+                <div class="gh-stat" data-reveal><b>REPOS</b><span class="gh-val is-loading" data-stat="repos">···</span></div>
+                <div class="gh-stat" data-reveal style="--reveal-delay:.06s"><b>FOLLOWERS</b><span class="gh-val is-loading" data-stat="followers">···</span></div>
+                <div class="gh-stat" data-reveal style="--reveal-delay:.12s"><b>STARS</b><span class="gh-val is-loading" data-stat="stars">···</span></div>
+                <div class="gh-stat" data-reveal style="--reveal-delay:.18s"><b>LAST PUSH</b><span class="gh-val is-loading" data-stat="lastPush">···</span></div>
             </div>
 
             <div class="gh-repos" id="ghRepos" aria-live="polite"></div>
@@ -295,7 +346,7 @@
             <h2 data-i18n="certificates.h2">Reconhecimentos & Certificados</h2>
             <div class="cert-grid">
 
-                <article class="cert-card">
+                <article class="cert-card" data-reveal>
                     <div class="cert-image">
                         <img src="./assets/imgs/certificado-ggj26.jpg" alt="Certificado Global Game Jam 2026" class="clickable-img" onclick="openModal(this.src)">
                     </div>
@@ -310,7 +361,7 @@
                     </div>
                 </article>
 
-                <article class="cert-card">
+                <article class="cert-card" data-reveal>
                     <div class="cert-image">
                         <img src="./assets/imgs/GGJ26.2.png" alt="Certificado Global Game Jam 2026.2" class="clickable-img" onclick="openModal(this.src)">
                     </div>
@@ -336,7 +387,7 @@
 
             <div class="skills-wrapper">
 
-                <div class="skill-category">
+                <div class="skill-category" data-reveal>
                     <h3 data-i18n="sk1.h3">Main Stack (Profissional)</h3>
                     <div class="skill-prompt">rossini@arch:~/arsenal/stack$</div>
                     <ul class="skill-list">
@@ -348,7 +399,7 @@
                     </ul>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-reveal>
                     <h3 data-i18n="sk2.h3">Engenharia de Sistemas</h3>
                     <div class="skill-prompt">rossini@arch:~/arsenal/systems$</div>
                     <ul class="skill-list">
@@ -361,7 +412,7 @@
                     </ul>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-reveal>
                     <h3>Tools & Workflow</h3>
                     <div class="skill-prompt">rossini@arch:~/arsenal/tools$</div>
                     <ul class="skill-list">
@@ -371,7 +422,7 @@
                     </ul>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-reveal>
                     <h3 data-i18n="sk5.h3">Ferramentas & Agentes de IA</h3>
                     <div class="skill-prompt">rossini@arch:~/arsenal/ai-agents$</div>
                     <ul class="skill-list">
@@ -380,7 +431,7 @@
                     </ul>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category" data-reveal>
                     <h3 data-i18n="sk4.h3">Gestão & Dados</h3>
                     <div class="skill-prompt">rossini@arch:~/arsenal/mgmt$</div>
                     <ul class="skill-list">
@@ -403,7 +454,7 @@
 
             <div class="interests-grid">
 
-                <div class="interest-card cyber">
+                <div class="interest-card cyber" data-reveal>
                     <div class="icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                     </div>
@@ -411,7 +462,7 @@
                     <p data-i18n-html="interest1.p">Estudos ativos em <strong>Purple Teaming</strong>. Familiaridade com ferramentas do Kali Linux (Nmap, Burp Suite, etc) e práticas de Secure Coding (OWASP Top 10).</p>
                 </div>
 
-                <div class="interest-card hardware">
+                <div class="interest-card hardware" data-reveal style="--reveal-delay:.1s">
                     <div class="icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
                     </div>
@@ -419,7 +470,7 @@
                     <p data-i18n="interest2.p">Entusiasta de arquitetura de computadores. Gosto de entender como o software conversa com o hardware, explorando C e Assembly ocasionalmente.</p>
                 </div>
 
-                <div class="interest-card community">
+                <div class="interest-card community" data-reveal style="--reveal-delay:.2s">
                     <div class="icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                     </div>
@@ -439,7 +490,7 @@
             <div class="sys-wrap">
                 <div class="sys-grid">
 
-                <div class="terminal">
+                <div class="terminal" data-reveal>
                     <div class="terminal-bar">
                         <span class="t-dot t-r"></span><span class="t-dot t-y"></span><span class="t-dot t-g"></span>
                         <span class="terminal-title">rossini@arch — zsh</span>
@@ -474,7 +525,7 @@
                     </div>
                 </div>
 
-                <div class="terminal terminal-live" aria-label="Terminal interativo">
+                <div class="terminal terminal-live" data-reveal style="--reveal-delay:.12s" aria-label="Terminal interativo">
                     <div class="terminal-bar">
                         <span class="t-dot t-r"></span><span class="t-dot t-y"></span><span class="t-dot t-g"></span>
                         <span class="terminal-title">rossini@arch — zsh</span>
@@ -494,7 +545,7 @@
     </section>
 
     <footer id="contact">
-        <div class="container footer-content">
+        <div class="container footer-content" data-reveal>
             <h2 data-i18n="footer.h2">Vamos construir algo?</h2>
             <p data-i18n="footer.p">Estou sempre aberto a discutir desenvolvimento backend, hardware ou automação.</p>
             <a href="mailto:rossiniroberto52@gmail.com" class="btn-primary" data-i18n="footer.contact">Entrar em Contato</a>
@@ -600,7 +651,7 @@
                     const desc = (r.description || '').replace(/</g, '&lt;').replace(/>/g, '&gt;') || '—';
                     const color = LANG_COLORS[r.language] || GH_FALLBACK_COLOR;
                     return `
-                        <a class="gh-repo" href="${r.html_url}" target="_blank" rel="noopener">
+                        <a class="gh-repo" data-reveal href="${r.html_url}" target="_blank" rel="noopener">
                             <span class="gh-repo-name">${r.name}</span>
                             <span class="gh-repo-desc">${desc}</span>
                             <span class="gh-repo-meta">
@@ -611,6 +662,7 @@
                             </span>
                         </a>`;
                 }).join('');
+                if (window.initReveal) window.initReveal(document.getElementById('ghRepos'));
             } catch (e) {
                 const fb = document.getElementById('ghFallback');
                 if (fb) fb.hidden = false;
@@ -636,6 +688,7 @@
                 "hero.p": "Estudante de Ciência da Computação na UNICAP e Gerente na EJ Unicap. Foco em arquitetura de software, automação e desenvolvimento de sistemas robustos.",
                 "hero.cta1": "Ver Projetos",
                 "hero.cta2": "Baixar CV",
+                "hero.status": "Disponível para novos projetos",
                 "about.h2": "Sobre Mim",
                 "about.p1": 'Curso <strong>Ciência da Computação na UNICAP</strong> (2025–2028) e atuo como Gerente na EJ Unicap, liderando a área de computação e ajudando a transformar ideias em sistemas que funcionam de verdade.',
                 "about.p2": "O interesse por código começou aos 8 anos, quando música e computador se cruzaram pela primeira vez. Hoje, meu trabalho mora nos bastidores: APIs em Java, automações e arquiteturas desenhadas para rodar com estabilidade e o mínimo de atrito.",
@@ -669,8 +722,11 @@
                 "p6.desc": "Uma ferramenta de simulação numérica de alta precisão em C++ para calcular manobras de pouso (Suicide Burn) com massa variável e arrasto gravitacional não-uniforme. Inclui pipeline de visualização de telemetria em Python.",
                 "p7.desc": "Um compilador nativo desenvolvido do zero em C puro, traduzindo código estruturado direto para Assembly x86_64. Implementa escopo léxico rigoroso via Tabela de Símbolos plana (cache-friendly) e controle de fluxo com curto-circuito lógico no hardware.",
                 "p8.title": "Plataforma interna EJUNICAP",
-                "p8.desc": "Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.",
+                "p8.desc": "Plataforma interna da EJ Unicap para gerenciar demandas, clientes e projetos da empresa júnior. Backend em Python/FastAPI com PostgreSQL, desenhada para rodar a operação do dia a dia.",
+                "p9.desc": "Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.",
                 "p9.title": "Simulador de túnel de vento real",
+                "p10.desc": "Notebook matemático local estilo Jupyter/Colab. Você digita LaTeX, o backend converte para SymPy e resolve simbolicamente (integrais, derivadas, limites) devolvendo o resultado e os pontos para gráficos 2D (Plotly) e 3D (Three.js) orbitáveis.",
+                "p11.desc": "Bot de Telegram com RAG que centraliza os documentos da EJ Unicap e usa LLM para responder perguntas, mantendo o conhecimento da empresa sempre acessível e atualizado.",
                 "tag.automacao": "Automação",
                 "link.github": "Ver no GitHub &rarr;",
                 "link.githubcode": "Ver Código no GitHub &rarr;",
@@ -740,6 +796,7 @@
                 "hero.p": "Computer Science student at UNICAP and Manager at EJ Unicap. Focused on software architecture, automation, and robust systems development.",
                 "hero.cta1": "View Projects",
                 "hero.cta2": "Download CV",
+                "hero.status": "Available for new projects",
                 "about.h2": "About Me",
                 "about.p1": "I'm pursuing a degree in <strong>Computer Science at UNICAP</strong> (2025–2028) and work as a Manager at EJ Unicap, leading the computing area and helping turn ideas into systems that actually work.",
                 "about.p2": "My interest in code started at age 8, when music and computers first crossed paths. Today, my work lives behind the scenes: Java APIs, automation, and architectures designed to run reliably with minimal friction.",
@@ -772,8 +829,11 @@
                 "p6.desc": "A high-precision numerical simulation tool in C++ for calculating landing maneuvers (suicide burn) with variable mass and non-uniform gravitational drag. Includes a Python telemetry visualization pipeline.",
                 "p7.desc": "A native compiler built from scratch in pure C, translating structured code directly into x86_64 Assembly. Implements strict lexical scoping via a flat (cache-friendly) symbol table and hardware-level short-circuit flow control.",
                 "p8.title": "Internal EJUNICAP Platform",
-                "p8.desc": "Real-time 2D fluid flow simulator using Lattice Boltzmann Methods (LBM) for high precision, GPU-accelerated with Taichi Lang. Enables interactive visualization of flow patterns and aerodynamic profile optimization.",
+                "p8.desc": "EJ Unicap's internal platform for managing the junior enterprise's demands, clients, and projects. Python/FastAPI backend with PostgreSQL, built to run day-to-day operations.",
+                "p9.desc": "Real-time 2D fluid flow simulator using Lattice Boltzmann Methods (LBM) for high precision, GPU-accelerated with Taichi Lang. Enables interactive visualization of flow patterns and aerodynamic profile optimization.",
                 "p9.title": "Real Wind Tunnel Simulator",
+                "p10.desc": "Local math notebook styled after Jupyter/Colab. You type LaTeX, the backend converts it to SymPy and solves symbolically (integrals, derivatives, limits), returning the result plus point data for orbitable 2D (Plotly) and 3D (Three.js) plots.",
+                "p11.desc": "Telegram bot with RAG that centralizes EJ Unicap's documents and uses an LLM to answer questions, keeping company knowledge always accessible and up to date.",
                 "tag.automacao": "Automation",
                 "link.github": "View on GitHub &rarr;",
                 "link.githubcode": "View Code on GitHub &rarr;",
@@ -984,6 +1044,42 @@
             });
 
             body.addEventListener('click', () => input.focus());
+        })();
+    </script>
+
+    <script>
+        // ===== Scroll reveal + barra de progresso + estado da navbar =====
+        (function () {
+            let io = null;
+            function observe(root) {
+                if (!('IntersectionObserver' in window)) return;
+                if (!io) {
+                    io = new IntersectionObserver((entries) => {
+                        entries.forEach(e => {
+                            if (e.isIntersecting) {
+                                e.target.classList.add('reveal-in');
+                                io.unobserve(e.target);
+                            }
+                        });
+                    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+                }
+                (root || document).querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+            }
+            document.body.classList.add('reveal-ready');
+            observe(document);
+            window.initReveal = observe;
+
+            const nav = document.querySelector('.navbar');
+            const bar = document.getElementById('scrollProgress');
+            function onScroll() {
+                const h = document.documentElement;
+                const max = h.scrollHeight - h.clientHeight;
+                if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(window.scrollY / max, 1) : 0) + ')';
+                if (nav) nav.classList.toggle('is-scrolled', window.scrollY > 16);
+            }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', onScroll);
+            onScroll();
         })();
     </script>
 
