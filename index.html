@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio | Gerente & Desenvolvedor</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Syncopate:wght@400;700&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <meta property="og:title" content="Portfólio | Rossini Roberto">
     <meta property="og:description" content="Backend & Systems Developer | Estudante de Ciência da Computação">
     <meta property="og:image" content="https://imgur.com/oGy5yJo">
@@ -14,12 +15,8 @@
 </head>
 <body>
 
-    <div class="bg-fx" aria-hidden="true">
-        <div class="bg-blob bg-blob-a"></div>
-    </div>
-
     <nav class="navbar">
-        <div class="logo">rossini@dev</div>
+        <div class="logo glitch">rossini@dev</div>
         <div class="navbar-right">
             <ul class="nav-links" id="navMenu">
                 <li><a href="#about" data-i18n="nav.about">Sobre</a></li>
@@ -42,6 +39,22 @@
     </nav>
 
     <header class="hero">
+        <div class="hero-prism" aria-hidden="true">
+            <svg class="dsotm-prism" viewBox="0 0 640 300" role="img" aria-label="Prisma do Dark Side of the Moon: feixe de luz branca atravessando um prisma triangular e se decompondo em um espectro de cores" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0" y1="140" x2="216" y2="140" stroke="#e8e8e8" stroke-width="3"/>
+                <polygon points="255,70 185,200 325,200" fill="rgba(232,232,232,0.05)" stroke="#e8e8e8" stroke-width="2"/>
+                <g class="spectrum">
+                    <line x1="262" y1="83"  x2="620" y2="128" stroke="#ff1f1f"/>
+                    <line x1="270" y1="99"  x2="620" y2="144" stroke="#ff7a00"/>
+                    <line x1="279" y1="114" x2="620" y2="159" stroke="#ffe600"/>
+                    <line x1="287" y1="130" x2="620" y2="175" stroke="#00e04a"/>
+                    <line x1="296" y1="145" x2="620" y2="190" stroke="#0090ff"/>
+                    <line x1="304" y1="161" x2="620" y2="206" stroke="#5c4dff"/>
+                    <line x1="312" y1="177" x2="620" y2="222" stroke="#b14dff"/>
+                </g>
+            </svg>
+        </div>
+
         <div class="hero-content">
 
             <div class="profile-container" data-reveal>
@@ -282,18 +295,18 @@
                 <article class="project-card" data-reveal>
                     <div class="project-image">
                         <svg class="img-fluid" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder do projeto calc-visualizer" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="800" height="500" fill="#0e1219"/>
-                            <g stroke="rgba(230,236,242,0.05)" stroke-width="1">
+                            <rect width="800" height="500" fill="#111111"/>
+                            <g stroke="rgba(224,220,211,0.05)" stroke-width="1">
                                 <line x1="40" y1="0" x2="40" y2="500"/><line x1="120" y1="0" x2="120" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/><line x1="280" y1="0" x2="280" y2="500"/><line x1="360" y1="0" x2="360" y2="500"/><line x1="440" y1="0" x2="440" y2="500"/><line x1="520" y1="0" x2="520" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/><line x1="680" y1="0" x2="680" y2="500"/><line x1="760" y1="0" x2="760" y2="500"/>
                                 <line x1="0" y1="40" x2="800" y2="40"/><line x1="0" y1="120" x2="800" y2="120"/><line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="280" x2="800" y2="280"/><line x1="0" y1="360" x2="800" y2="360"/><line x1="0" y1="440" x2="800" y2="440"/>
                             </g>
-                            <line x1="40" y1="500" x2="40" y2="20" stroke="rgba(230,236,242,0.16)" stroke-width="1.5"/>
-                            <line x1="40" y1="300" x2="760" y2="300" stroke="rgba(230,236,242,0.16)" stroke-width="1.5"/>
-                            <polyline points="40,304 60,300 80,303 100,313 120,329 140,348 160,369 180,389 200,405 220,416 240,420 260,417 280,407 300,391 320,372 340,351 360,331 380,315 400,304 420,300 440,303 460,313 480,329 500,348 520,369 540,389 560,405 580,416 600,420 620,417 640,407 660,391 680,372 700,351 720,331 740,315 760,304" fill="none" stroke="rgba(62,207,142,0.4)" stroke-width="1.5"/>
-                            <polyline points="40,300 60,256 80,216 100,187 120,172 140,172 160,187 180,216 200,256 220,300 240,344 260,384 280,413 300,428 320,428 340,413 360,384 380,344 400,300 420,256 440,216 460,187 480,172 500,172 520,187 540,216 560,256 580,300 600,344 620,384 640,413 660,428 680,428 700,413 720,384 740,344 760,300" fill="none" stroke="#efe5cf" stroke-width="2.5"/>
-                            <circle cx="40" cy="300" r="4" fill="#efe5cf"/>
-                            <text x="52" y="286" font-family="'Hack',monospace" font-size="26" fill="#efe5cf">f(x) = x² + 3x − 5</text>
-                            <text x="52" y="330" font-family="'Hack',monospace" font-size="16" fill="rgba(230,236,242,0.5)">LaTeX → SymPy → 2D/3D</text>
+                            <line x1="40" y1="500" x2="40" y2="20" stroke="rgba(224,220,211,0.16)" stroke-width="1.5"/>
+                            <line x1="40" y1="300" x2="760" y2="300" stroke="rgba(224,220,211,0.16)" stroke-width="1.5"/>
+                            <polyline points="40,304 60,300 80,303 100,313 120,329 140,348 160,369 180,389 200,405 220,416 240,420 260,417 280,407 300,391 320,372 340,351 360,331 380,315 400,304 420,300 440,303 460,313 480,329 500,348 520,369 540,389 560,405 580,416 600,420 620,417 640,407 660,391 680,372 700,351 720,331 740,315 760,304" fill="none" stroke="rgba(95,191,106,0.4)" stroke-width="1.5"/>
+                            <polyline points="40,300 60,256 80,216 100,187 120,172 140,172 160,187 180,216 200,256 220,300 240,344 260,384 280,413 300,428 320,428 340,413 360,384 380,344 400,300 420,256 440,216 460,187 480,172 500,172 520,187 540,216 560,256 580,300 600,344 620,384 640,413 660,428 680,428 700,413 720,384 740,344 760,300" fill="none" stroke="#cf0000" stroke-width="2.5"/>
+                            <circle cx="40" cy="300" r="4" fill="#cf0000"/>
+                            <text x="52" y="286" font-family="'Space Mono',monospace" font-size="26" fill="#e0dcd3">f(x) = x² + 3x − 5</text>
+                            <text x="52" y="330" font-family="'Space Mono',monospace" font-size="16" fill="rgba(224,220,211,0.5)">LaTeX → SymPy → 2D/3D</text>
                         </svg>
                     </div>
                     <div class="project-info">
@@ -1082,6 +1095,9 @@
             onScroll();
         })();
     </script>
+
+    <div class="vhs-track" aria-hidden="true"></div>
+    <div class="vhs-track vhs-track-2" aria-hidden="true"></div>
 
 </body>
 </html>
