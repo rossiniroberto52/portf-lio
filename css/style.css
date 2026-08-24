@@ -49,6 +49,11 @@
     --shadow-critical: 4px 4px 0px var(--neon-red);
     --shadow-black: 4px 4px 0px #000000;
 
+    /* Tijolo (The Wall) — escala em linha reta, sem diagonais */
+    --brick-w: 80px;
+    --brick-h: 28px;
+    --mortar: 2px;
+
     /* Timing — curto e seco, nunca "suave" */
     --t-fast: 80ms;
     --t-snap: 120ms;
@@ -69,24 +74,14 @@ html {
 body {
     font-family: var(--font-mono);
     background-color: var(--void-black);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='164' height='60'%3E%3Crect width='164' height='60' fill='%230d0d0d'/%3E%3Crect x='82' y='0' width='80' height='28' fill='%23141414'/%3E%3Crect x='0' y='30' width='41' height='28' fill='%23141414'/%3E%3Crect x='123' y='30' width='41' height='28' fill='%23141414'/%3E%3Crect x='0' y='28' width='164' height='2' fill='%23000000'/%3E%3Crect x='0' y='58' width='164' height='2' fill='%23000000'/%3E%3Crect x='80' y='0' width='2' height='28' fill='%23000000'/%3E%3Crect x='162' y='0' width='2' height='28' fill='%23000000'/%3E%3Crect x='41' y='30' width='2' height='28' fill='%23000000'/%3E%3Crect x='123' y='30' width='2' height='28' fill='%23000000'/%3E%3C/svg%3E");
+    background-size: calc((var(--brick-w) + var(--mortar)) * 2) calc((var(--brick-h) + var(--mortar)) * 2);
+    background-attachment: fixed;
     color: var(--text-primary);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-}
-
-/* Grid geométrico (blueprint) — global, atrás de scanline/noise */
-html::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    z-index: 2999;
-    pointer-events: none;
-    background-image:
-        linear-gradient(rgba(232, 232, 232, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(232, 232, 232, 0.045) 1px, transparent 1px);
-    background-size: 56px 56px;
 }
 
 /* Scanlines — textura ambiente, sempre presente */
@@ -1518,10 +1513,6 @@ footer p {
 
     .hero {
         padding: 110px 0 70px;
-    }
-
-    html::before {
-        background-size: 44px 44px;
     }
 
     h1 {
