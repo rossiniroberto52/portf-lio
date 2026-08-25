@@ -454,6 +454,13 @@ section[id] > .container > h2::before {
     height: auto;
     opacity: 0.55;
     filter: drop-shadow(1px 0 0 rgba(255, 0, 255, 0.35)) drop-shadow(-1px 0 0 rgba(0, 255, 242, 0.35));
+    animation: pig-float 7s ease-in-out infinite;
+}
+
+@keyframes pig-float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33%  { transform: translateY(-6px)  rotate(0.4deg); }
+    66%  { transform: translateY(-8px) rotate(-0.3deg); }
 }
 
 /* Foto de perfil — quadrada, sombra dura */
