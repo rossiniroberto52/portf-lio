@@ -1063,31 +1063,353 @@ footer p {
     color: var(--text-muted);
 }
 
-/* ---------- Responsivo ---------- */
-@media (max-width: 900px) {
-    .about-grid,
-    .sys-grid { grid-template-columns: 1fr; }
-    .skills-wrapper { grid-template-columns: repeat(2, 1fr); }
+/* ============================================================ */
+/* HOME LAB / INFRAESTRUTURA — LEITURA TÉCNICA REFLEX            */
+/* Estética cyber-metal-ux-pro: zero border-radius, sombras       */
+/* rígidas, scanlines de sobreposição, display Orbitron/Syncopate */
+/* + dados JetBrains Mono/Fira Code, transições rápidas e secas.  */
+/* ============================================================ */
+.homelab-wrap {
+    background: var(--surface-1);
+    border-top: 1px solid var(--amber);
+    border-bottom: 1px solid var(--amber);
+    position: relative;
+    overflow: hidden;
 }
 
-@media (max-width: 768px) {
-    .navbar { padding: 12px 20px; }
-    .hamburger { display: flex; }
-    .nav-links {
-        position: fixed;
-        top: 56px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-        background: rgba(6, 8, 10, 0.98);
-        border-bottom: 1px solid var(--amber);
-        padding: 16px 20px;
-        display: none;
-    }
-    .nav-links.open { display: flex; }
-    .nav-links a { width: 100%; font-size: 1rem; }
+/* borda rígida de enquadramento + sombra sólida no chão */
+.homelab-wrap::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 12px;
+    background: #000;
+    z-index: 1;
+}
+.homelab-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.22) 0px,
+            rgba(0, 0, 0, 0.22) 1px,
+            transparent 1px,
+            transparent 3px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            rgba(255, 176, 0, 0.035) 0px,
+            rgba(255, 176, 0, 0.035) 1px,
+            transparent 1px,
+            transparent 9px
+        );
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+}
 
-    .skills-wrapper { grid-template-columns: 1fr; }
+.homelab-header {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 28px 0 22px;
+    border-bottom: 1px solid var(--border-line);
+    margin-bottom: 28px;
+}
+
+.hl-tag {
+    display: inline-block;
+    font-family: 'Orbitron', 'Syncopate', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    color: var(--amber);
+    background: var(--surface-2);
+    border: 1px solid var(--amber);
+    padding: 3px 10px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.hl-title {
+    font-family: 'Orbitron', 'Syncopate', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin: 0 0 8px;
+    text-shadow: 2px 2px 0 var(--amber);
+    position: relative;
+}
+
+.hl-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--amber);
+    margin: 10px auto 0;
+}
+
+.hl-sub {
+    display: block;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    max-width: 640px;
+    margin: 14px auto 0;
+    letter-spacing: 0.04em;
+}
+
+/* grade dupla: esquerda (diagrama) + direita (três painéis) */
+.hl-grid {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+/* painéis com sombra rígida 2px/2px preta */
+.hl-panel {
+    background: var(--void-black);
+    border: 1px solid var(--border-line);
+    box-shadow: 2px 2px 0 var(--surface-3);
+    transition: border-color 0.12s linear, box-shadow 0.12s linear;
+}
+.hl-panel:hover {
+    border-color: var(--amber);
+    box-shadow: 2px 2px 0 var(--amber);
+}
+
+.hl-panel-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: var(--surface-1);
+    border-bottom: 1px solid var(--border-line);
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+}
+.hl-panel-title {
+    margin-left: 6px;
+    color: var(--amber);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+}
+
+.hl-pdot {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 0 !important;
+    background: var(--border-line);
+}
+.hl-pdot-r { background: #ef4444; }
+.hl-pdot-y { background: var(--amber); }
+.hl-pdot-g { background: var(--phosphor); }
+
+.hl-panel-body {
+    padding: 18px 20px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    color: var(--text-primary);
+    overflow: auto;
+}
+
+/* diagrama SVG ocupa largura total e escala-controlada */
+.hl-net-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-line);
+    background: var(--void-black);
+    box-shadow: 2px 2px 0 var(--surface-3);
+    transition: border-color 0.12s linear, box-shadow 0.12s linear;
+}
+.hl-topology:hover .hl-net-svg {
+    border-color: var(--amber);
+    box-shadow: 2px 2px 0 var(--amber);
+}
+
+/* legenda */
+.hl-legend {
+    margin-top: 14px;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.hl-legend-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.hl-legend-swatch {
+    width: 16px;
+    height: 2px;
+    display: inline-block;
+    background: var(--amber);
+}
+.hl-legend-phosphor { background: var(--phosphor); }
+.hl-legend-dashed {
+    background: transparent;
+    border-top: 1px dashed var(--phosphor);
+    height: 0;
+    width: 16px;
+}
+
+/* Painel direito: specs + serviços + ops */
+.hl-right {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hl-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.72rem;
+}
+.hl-specs-table tr {
+    border-bottom: 1px solid var(--border-line);
+    transition: background 0.12s linear;
+}
+.hl-specs-table tr:hover { background: var(--surface-2); }
+.hl-specs-table td {
+    padding: 8px 6px;
+    color: var(--text-muted);
+    vertical-align: top;
+}
+.hl-specs-table td:first-child {
+    width: 42%;
+    color: var(--amber);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.62rem;
+    padding-right: 12px;
+}
+.hl-specs-table td:last-child {
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+.hl-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    color: var(--phosphor);
+    letter-spacing: 0.04em;
+}
+
+/* lista de serviços */
+.hl-services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.hl-svc {
+    padding: 10px 12px;
+    border: 1px solid var(--border-line);
+    background: var(--surface-2);
+    transition: border-color 0.12s linear, background 0.12s linear;
+    position: relative;
+}
+.hl-svc:hover {
+    border-color: var(--amber);
+    background: var(--surface-3);
+}
+.hl-svc-name {
+    display: block;
+    font-family: 'Orbitron', 'Syncopate', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+.hl-svc-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    background: var(--void-black);
+    border: 1px solid var(--border-line);
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+.hl-svc-tag-phosphor {
+    border-color: var(--phosphor);
+    color: var(--phosphor);
+}
+.hl-svc-tag-amber {
+    border-color: var(--amber);
+    color: var(--amber);
+}
+.hl-svc-note {
+    display: block;
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+}
+
+/* blocos operacionais */
+.hl-ops-block {
+    padding: 10px 12px;
+    border: 1px solid var(--border-line);
+    background: var(--surface-2);
+    margin-bottom: 10px;
+    transition: border-color 0.12s linear;
+}
+.hl-ops-block:hover { border-color: var(--amber); }
+.hl-ops-k {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.7rem;
+    color: var(--amber);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+.hl-ops-v {
+    font-size: 0.66rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+}
+.hl-ops-foot {
+    margin-top: 8px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-line);
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+}
+
+/* quebra responsiva: empilhar colunas em telas médias e pequenas */
+@media (max-width: 880px) {
+    .hl-grid { grid-template-columns: 1fr; }
+    .hl-net-svg { height: 200px; }
+    .hl-panel-body { padding: 14px 16px; }
+}
+
+@media (max-width: 560px) {
+    .homelab-header { padding: 20px 0 16px; }
+    .hl-title { letter-spacing: 0.1em; }
+    .hl-panel-bar { flex-wrap: wrap; }
+    .hl-panel-title { width: 100%; margin-left: 0; }
 }

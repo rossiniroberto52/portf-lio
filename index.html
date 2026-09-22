@@ -370,6 +370,181 @@
                 </article>
 
             </div>
+
+            <!-- ============================================================ -->
+            <!-- HOME LAB / INFRAESTRUTURA — LEITURA TÉCNICA REFLEX -->
+            <!-- ============================================================ -->
+            <div class="homelab-wrap" data-reveal>
+
+                <div class="homelab-header">
+                    <span class="hl-tag">INFRA / ON-SITE</span>
+                    <h3 class="hl-title" data-i18n="homelab.title">ejuicap-server — Leitura de sistema</h3>
+                    <span class="hl-sub" data-i18n="homelab.sub">Topologia de rede, serviços ativos e procedimentos operacionais.</span>
+                </div>
+
+                <div class="hl-grid">
+
+                    <!-- COLUNA ESQUERDA: DIAGRAMA DE REDE -->
+                    <div class="hl-panel hl-topology">
+                        <div class="hl-panel-bar">
+                            <span class="hl-pdot hl-pdot-r"></span>
+                            <span class="hl-pdot hl-pdot-y"></span>
+                            <span class="hl-pdot hl-pdot-g"></span>
+                            <span class="hl-panel-title" data-i18n="homelab.topology.bar">NET.ROUTE — TOPOLOGIA LEGENDA</span>
+                        </div>
+                        <div class="hl-panel-body">
+                            <svg class="hl-net-svg" viewBox="0 0 640 300" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagrama de topologia de rede do servidor doméstico" xmlns="http://www.w3.org/2000/svg">
+                                <!-- grid de fundo -->
+                                <defs>
+                                    <pattern id="hlGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,176,0,0.06)" stroke-width="1"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="640" height="300" fill="url(#hlGrid)"/>
+
+                                <!-- camada OST/ONT -->
+                                <rect x="40" y="60" width="90" height="42" fill="var(--surface-2)" stroke="var(--amber)" stroke-width="1.5"/>
+                                <text x="44" y="78" font-family="'JetBrains Mono','Fira Code',monospace" font-size="11" fill="var(--amber)" letter-spacing="0.5">ONT</text>
+                                <text x="44" y="92" font-family="'JetBrains Mono','Fira Code',monospace" font-size="8" fill="var(--text-muted)" letter-spacing="0.4">[ONT.APONTAMENTO]</text>
+
+                                <!-- seta ONT -> router -->
+                                <line x1="132" y1="81" x2="196" y2="81" stroke="var(--amber)" stroke-width="1.5"/>
+                                <polygon points="196,75 204,81 196,87" fill="var(--amber)"/>
+
+                                <!-- camada router -->
+                                <rect x="200" y="60" width="110" height="42" fill="var(--surface-2)" stroke="var(--amber)" stroke-width="1.5"/>
+                                <text x="204" y="78" font-family="'JetBrains Mono','Fira Code',monospace" font-size="11" fill="var(--amber)" letter-spacing="0.5">HOME ROUTER</text>
+                                <text x="204" y="92" font-family="'JetBrains Mono','Fira Code',monospace" font-size="8" fill="var(--text-muted)" letter-spacing="0.4">[GW.SUBREDE.LAB]</text>
+
+                                <!-- seta router -> tailscale -->
+                                <line x1="312" y1="81" x2="376" y2="81" stroke="var(--amber)" stroke-width="1.5"/>
+                                <polygon points="376,75 384,81 376,87" fill="var(--amber)"/>
+
+                                <!-- caixa mesh tailscale (abstraída) -->
+                                <rect x="388" y="42" width="120" height="78" fill="var(--surface-2)" stroke="var(--phosphor)" stroke-width="1.5" stroke-dasharray="4 3"/>
+                                <text x="392" y="60" font-family="'Orbitron','Syncopate',sans-serif" font-size="11" fill="var(--phosphor)" letter-spacing="1.2">TAILSCALE MESH</text>
+                                <text x="392" y="76" font-family="'JetBrains Mono','Fira Code',monospace" font-size="8" fill="var(--text-muted)" letter-spacing="0.4">[VPN.SOBRE.UDP/41641]</text>
+                                <text x="392" y="90" font-family="'JetBrains Mono','Fira Code',monospace" font-size="8" fill="var(--text-muted)" letter-spacing="0.4">NODES: laptop · telefone</text>
+                                <text x="392" y="104" font-family="'JetBrains Mono','Fira Code',monospace" font-size="8" fill="var(--text-muted)" letter-spacing="0.4">· tablets · ejuicap-srv</text>
+
+                                <!-- seta mesh -> server -->
+                                <line x1="510" y1="101" x2="540" y2="132" stroke="var(--phosphor)" stroke-width="1.5"/>
+                                <polygon points="540,132 532,126 536,136" fill="var(--phosphor)"/>
+
+                                <!-- servidor (centro-direita) -->
+                                <rect x="544" y="120" width="86" height="72" fill="var(--surface-3)" stroke="var(--amber)" stroke-width="2"/>
+                                <text x="548" y="140" font-family="'Orbitron','Syncopate',sans-serif" font-size="11" fill="var(--amber)" letter-spacing="1">ejuicap</text>
+                                <text x="548" y="154" font-family="'Orbitron','Syncopate',sans-serif" font-size="11" fill="var(--amber)" letter-spacing="1">-server</text>
+                                <line x1="548" y1="162" x2="626" y2="162" stroke="var(--amber)" stroke-width="1"/>
+                                <text x="548" y="175" font-family="'JetBrains Mono','Fira Code',monospace" font-size="8" fill="var(--phosphor)" letter-spacing="0.3">UBUNTU · GTX 1060 6GB</text>
+
+                                <!-- Pi-hole como nameserver do tailscale (linha separada) -->
+                                <line x1="548" y1="192" x2="160" y2="192" stroke="var(--phosphor)" stroke-width="1.2" stroke-dasharray="3 3"/>
+                                <polygon points="160,186 152,192 160,198" fill="var(--phosphor)"/>
+                                <rect x="40" y="178" width="120" height="44" fill="var(--surface-2)" stroke="var(--phosphor)" stroke-width="1.5"/>
+                                <text x="44" y="194" font-family="'JetBrains Mono','Fira Code',monospace" font-size="9" fill="var(--phosphor)" letter-spacing="0.4">PI-HOLE · DNS</text>
+                                <text x="44" y="208" font-family="'JetBrains Mono','Fira Code',monospace" font-size="7" fill="var(--text-muted)" letter-spacing="0.3">network_mode: host</text>
+                                <text x="158" y="222" font-family="'JetBrains Mono','Fira Code',monospace" font-size="7" fill="var(--phosphor)" letter-spacing="0.3">NAMESERVER TS</text>
+                            </svg>
+
+                            <div class="hl-legend">
+                                <div class="hl-legend-row"><span class="hl-legend-swatch hl-legend-amber"></span><span data-i18n="homelab.legend.amber">Fronteira decesso / enlace físico</span></div>
+                                <div class="hl-legend-row"><span class="hl-legend-swatch hl-legend-phosphor"></span><span data-i18n="homelab.legend.phosphor">Mesh remoto / túnel controlado</span></div>
+                                <div class="hl-legend-row"><span class="hl-legend-swatch hl-legend-dashed"></span><span data-i18n="homelab.legend.dashed">Serviço exposto via rede mesh</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COLUNA DIREITA: SPECS + SERVIDORES + OPS -->
+                    <div class="hl-right">
+
+                        <!-- LEITURA DE SPECS -->
+                        <div class="hl-panel hl-specs">
+                            <div class="hl-panel-bar">
+                                <span class="hl-pdot hl-pdot-r"></span>
+                                <span class="hl-pdot hl-pdot-y"></span>
+                                <span class="hl-pdot hl-pdot-g"></span>
+                                <span class="hl-panel-title" data-i18n="homelab.specs.bar">SYS.READOUT — ESPECIFICAÇÃO</span>
+                            </div>
+                            <div class="hl-panel-body hl-specs-body">
+                                <table class="hl-specs-table">
+                                    <tbody>
+                                        <tr><td data-i18n="homelab.specs.host">Hostname</td><td class="hl-mono">ejuicap-server</td></tr>
+                                        <tr><td data-i18n="homelab.specs.os">Sistema</td><td class="hl-mono">Ubuntu LTS</td></tr>
+                                        <tr><td data-i18n="homelab.specs.gpu">GPU</td><td class="hl-mono">NVIDIA GTX 1060 · 6 GB VRAM</td></tr>
+                                        <tr><td data-i18n="homelab.specs.net">Rede</td><td class="hl-mono">Tailscale mesh (subnet router ativo)</td></tr>
+                                        <tr><td data-i18n="homelab.specs.role">Função</td><td class="hl-mono">Servidor de casa / workloads mistos</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- SERVIDORES ATIVOS -->
+                        <div class="hl-panel hl-services">
+                            <div class="hl-panel-bar">
+                                <span class="hl-pdot hl-pdot-r"></span>
+                                <span class="hl-pdot hl-pdot-y"></span>
+                                <span class="hl-pdot hl-pdot-g"></span>
+                                <span class="hl-panel-title" data-i18n="homelab.services.bar">SVC.SUPERVISOR — PROCESSOS ATIVOS</span>
+                            </div>
+                            <div class="hl-panel-body">
+                                <ul class="hl-services-list">
+                                    <li class="hl-svc">
+                                        <span class="hl-svc-name">Pi-hole</span>
+                                        <span class="hl-svc-tag hl-svc-tag-phosphor" data-i18n="homelab.svc.pihole">DNS tailnet-wide · Permitir todas as origens</span>
+                                        <span class="hl-svc-note hl-mono" data-i18n="homelab.svc.piholeNote">nameserver do Tailscale · network_mode: host (logs com IP real do cliente)</span>
+                                    </li>
+                                    <li class="hl-svc">
+                                        <span class="hl-svc-name">n8n</span>
+                                        <span class="hl-svc-tag hl-svc-tag-amber" data-i18n="homelab.svc.n8n">Automação de fluxos / integrações</span>
+                                    </li>
+                                    <li class="hl-svc">
+                                        <span class="hl-svc-name">waha</span>
+                                        <span class="hl-svc-tag hl-svc-tag-amber" data-i18n="homelab.svc.waha">Gateway de mensagens / entrega</span>
+                                    </li>
+                                    <li class="hl-svc">
+                                        <span class="hl-svc-name">Minecraft (Forge)</span>
+                                        <span class="hl-svc-tag hl-svc-tag-amber" data-i18n="homelab.svc.mc">Servidor modded · Forge 1.20.1</span>
+                                    </li>
+                                    <li class="hl-svc">
+                                        <span class="hl-svc-name">AI Training</span>
+                                        <span class="hl-svc-tag hl-svc-tag-phosphor" data-i18n="homelab.svc.ai">Workloads de treino na GTX 1060</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- PROCEDIMENTOS OPERACIONAIS -->
+                        <div class="hl-panel hl-ops">
+                            <div class="hl-panel-bar">
+                                <span class="hl-pdot hl-pdot-r"></span>
+                                <span class="hl-pdot hl-pdot-y"></span>
+                                <span class="hl-pdot hl-pdot-g"></span>
+                                <span class="hl-panel-title" data-i18n="homelab.ops.bar">OPS.PROCEDURE — ROTINA</span>
+                            </div>
+                            <div class="hl-panel-body">
+                                <div class="hl-ops-block">
+                                    <div class="hl-ops-line hl-ops-k" data-i18n="homelab.ops.tmux">tmux</div>
+                                    <div class="hl-ops-line hl-ops-v hl-mono" data-i18n="homelab.ops.tmuxDesc">gerenciamento de sessão: painéis divididos por serviço, reanexo remoto via tailnet</div>
+                                </div>
+                                <div class="hl-ops-block">
+                                    <div class="hl-ops-line hl-ops-k" data-i18n="homelab.ops.backups">Backups do mundo (Minecraft)</div>
+                                    <div class="hl-ops-line hl-ops-v hl-mono" data-i18n="homelab.ops.backupsDesc">cron + tmux send-keys: snapshot automatizado do mundo, girando em janela fixa</div>
+                                </div>
+                                <div class="hl-ops-block">
+                                    <div class="hl-ops-line hl-ops-k" data-i18n="homelab.ops.piholeMigrate">Pi-hole → Docker</div>
+                                    <div class="hl-ops-line hl-ops-v hl-mono" data-i18n="homelab.ops.piholeMigrateDesc">migrado para network_mode: host — os logs de DNS agora mostram o IP real de cada cliente da tailnet</div>
+                                </div>
+                                <div class="hl-ops-line hl-ops-foot hl-mono" data-i18n="homelab.ops.foot">operação local · sem exposição de IPs reais ou credenciais</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </section>
 
@@ -849,7 +1024,35 @@
                 "github.offline": "Falha ao carregar dados do GitHub.",
                 "footer.p": "Estou sempre aberto a discutir desenvolvimento backend, hardware ou automação.",
                 "footer.contact": "Entrar em Contato",
-                "footer.copyright": "&copy; 2026 Desenvolvido com Ceticismo e Código."
+                "footer.copyright": "© 2026 Desenvolvido com Ceticismo e Código.",
+
+                "homelab.title": "ejuicap-server — Leitura de sistema",
+                "homelab.sub": "Topologia de rede, serviços ativos e procedimentos operacionais.",
+                "homelab.topology.bar": "NET.ROUTE — TOPOLOGIA LEGENDA",
+                "homelab.specs.bar": "SYS.READOUT — ESPECIFICAÇÃO",
+                "homelab.specs.host": "Hostname",
+                "homelab.specs.os": "Sistema",
+                "homelab.specs.gpu": "GPU",
+                "homelab.specs.net": "Rede",
+                "homelab.specs.role": "Função",
+                "homelab.services.bar": "SVC.SUPERVISOR — PROCESSOS ATIVOS",
+                "homelab.svc.pihole": "DNS tailnet-wide · Permitir todas as origens",
+                "homelab.svc.piholeNote": "nameserver do Tailscale · network_mode: host (logs com IP real do cliente)",
+                "homelab.svc.n8n": "Automação de fluxos / integrações",
+                "homelab.svc.waha": "Gateway de mensagens / entrega",
+                "homelab.svc.mc": "Servidor modded · Forge 1.20.1",
+                "homelab.svc.ai": "Workloads de treino na GTX 1060",
+                "homelab.ops.bar": "OPS.PROCEDURE — ROTINA",
+                "homelab.ops.tmux": "tmux",
+                "homelab.ops.tmuxDesc": "gerenciamento de sessão: painéis divididos por serviço, reanexo remoto via tailnet",
+                "homelab.ops.backups": "Backups do mundo (Minecraft)",
+                "homelab.ops.backupsDesc": "cron + tmux send-keys: snapshot automatizado do mundo, girando em janela fixa",
+                "homelab.ops.piholeMigrate": "Pi-hole → Docker",
+                "homelab.ops.piholeMigrateDesc": "migrado para network_mode: host — os logs de DNS agora mostram o IP real de cada cliente da tailnet",
+                "homelab.ops.foot": "operação local · sem exposição de IPs reais ou credenciais",
+                "homelab.legend.amber": "Fronteira decesso / enlace físico",
+                "homelab.legend.phosphor": "Mesh remoto / túnel controlado",
+                "homelab.legend.dashed": "Serviço exposto via rede mesh"
             },
             en: {
                 "pageTitle": "Portfolio | Manager & Developer",
@@ -960,7 +1163,35 @@
                 "github.offline": "Could not load GitHub data.",
                 "footer.p": "I'm always open to discussing backend development, hardware, or automation.",
                 "footer.contact": "Get in Touch",
-                "footer.copyright": "&copy; 2026 Built with Skepticism and Code."
+                "footer.copyright": "&copy; 2026 Built with Skepticism and Code.",
+
+                "homelab.title": "ejuicap-server — System readout",
+                "homelab.sub": "Network topology, active services, and operational procedures.",
+                "homelab.topology.bar": "NET.ROUTE — TOPOLOGY LEGEND",
+                "homelab.specs.bar": "SYS.READOUT — SPECIFICATION",
+                "homelab.specs.host": "Hostname",
+                "homelab.specs.os": "OS",
+                "homelab.specs.gpu": "GPU",
+                "homelab.specs.net": "Network",
+                "homelab.specs.role": "Role",
+                "homelab.services.bar": "SVC.SUPERVISOR — ACTIVE PROCESSES",
+                "homelab.svc.pihole": "Tailnet-wide DNS · Permit all origins",
+                "homelab.svc.piholeNote": "Tailscale nameserver · network_mode: host (logs with real client IP)",
+                "homelab.svc.n8n": "Workflow automation / integrations",
+                "homelab.svc.waha": "Messaging / delivery gateway",
+                "homelab.svc.mc": "Modded server · Forge 1.20.1",
+                "homelab.svc.ai": "Training workloads on the GTX 1060",
+                "homelab.ops.bar": "OPS.PROCEDURE — ROUTINE",
+                "homelab.ops.tmux": "tmux",
+                "homelab.ops.tmuxDesc": "session management: split panels per service, remote reattach over the tailnet",
+                "homelab.ops.backups": "World backups (Minecraft)",
+                "homelab.ops.backupsDesc": "cron + tmux send-keys: automated world snapshot, rotating on a fixed window",
+                "homelab.ops.piholeMigrate": "Pi-hole → Docker",
+                "homelab.ops.piholeMigrateDesc": "migrated to network_mode: host — DNS logs now show each tailnet client's real IP",
+                "homelab.ops.foot": "local operation · no real IPs or credentials exposed",
+                "homelab.legend.amber": "Drop frontier / physical link",
+                "homelab.legend.phosphor": "Remote mesh / controlled tunnel",
+                "homelab.legend.dashed": "Service exposed over the mesh"
             }
         };
 
