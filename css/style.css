@@ -396,27 +396,6 @@ h1 {
     margin: 0 auto 28px auto;
 }
 
-.hero-status {
-    margin-top: 24px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    color: var(--phosphor);
-    border: 1px solid rgba(51, 255, 102, 0.2);
-    padding: 4px 12px;
-    background: var(--surface-1);
-}
-
-.status-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--phosphor);
-    border-radius: 50% !important;
-}
-
 /* ---------- Botões ---------- */
 .cta-group {
     display: flex;
