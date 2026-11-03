@@ -933,44 +933,66 @@
         }
 
         async function loadGitHub() {
-            try {
-                const [user, repos] = await Promise.all([
-                    fetch(`https://api.github.com/users/${GH_USER}`).then(r => r.json()),
-                    fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`).then(r => r.json())
-                ]);
-                if (user.message || !Array.isArray(repos)) throw new Error('api');
+                    try {
+                        const [user, repos] = await Promise.all([
+                            fetch(`https://api.github.com/users/${GH_USER}`).then(r => r.json()),
+                            fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`).then(r => r.json())
+                        ]);
+                        if (user.message || !Array.isArray(repos)) throw new Error('api');
 
-                const totalStars = repos.reduce((a, r) => a + (r.stargazers_count || 0), 0);
-                const top = repos
-                    .filter(r => !r.fork && r.name.toLowerCase() !== GH_USER.toLowerCase())
-                    .slice(0, 4);
+                        const totalStars = repos.reduce((a, r) => a + (r.stargazers_count || 0), 0);
+                
+                        // Pinned repos for backend recruiter (ordered by relevance)
+                        const pinnedNames = [
+                            'portf-lio',
+                            'Eduverse-Platform',  // or actual repo name
+                            'carrental-api',
+                            'agente_telegram_ej',
+                            'Plataforma-EJUNICAP',  // or actual repo name
+                            'audity-sim',
+                            'Orbital-Maneuver-Solver',
+                            'Quartz-LANG-AND-COMPILER',
+                            'gameengine-renew',
+                            'llm-model-by-scratch'
+                        ];
+                
+                        // Filter to only existing repos
+                        const repoMap = new Map(repos.map(r => [r.name.toLowerCase(), r]));
+                        const pinned = pinnedNames
+                            .map(name => repoMap.get(name.toLowerCase()))
+                            .filter(Boolean)
+                            .slice(0, 5);
 
-                ghSetStat('repos', user.public_repos ?? repos.length);
-                ghSetStat('followers', user.followers ?? '—');
-                ghSetStat('stars', totalStars);
-                ghSetStat('lastPush', ghTimeAgo(repos[0]?.pushed_at));
+                        ghSetStat('repos', user.public_repos ?? repos.length);
+                        ghSetStat('followers', user.followers ?? '—');
+                        ghSetStat('stars', totalStars);
+                        ghSetStat('lastPush', ghTimeAgo(repos[0]?.pushed_at));
 
-                document.getElementById('ghRepos').innerHTML = top.map(r => {
-                    const desc = (r.description || '').replace(/</g, '&lt;').replace(/>/g, '&gt;') || '—';
-                    const color = LANG_COLORS[r.language] || GH_FALLBACK_COLOR;
-                    return `
-                        <a class="gh-repo" data-reveal href="${r.html_url}" target="_blank" rel="noopener">
-                            <span class="gh-repo-name">${r.name}</span>
-                            <span class="gh-repo-desc">${desc}</span>
-                            <span class="gh-repo-meta">
-                                <span class="dot-lang" style="--lang:${color}"></span>
-                                ${r.language || '—'}
-                                <span class="gh-star">★ ${r.stargazers_count}</span>
-                                <span class="gh-fork">fork ${r.forks_count}</span>
-                            </span>
-                        </a>`;
-                }).join('');
-                if (window.initReveal) window.initReveal(document.getElementById('ghRepos'));
-            } catch (e) {
-                const fb = document.getElementById('ghFallback');
-                if (fb) fb.hidden = false;
-            }
-        }
+                        const displayRepos = pinned.length > 0 ? pinned : repos
+                            .filter(r => !r.fork && r.name.toLowerCase() !== GH_USER.toLowerCase())
+                            .slice(0, 4);
+
+                        document.getElementById('ghRepos').innerHTML = displayRepos.map(r => {
+                            const desc = (r.description || '').replace(/</g, '<').replace(/>/g, '>') || '—';
+                            const color = LANG_COLORS[r.language] || GH_FALLBACK_COLOR;
+                            return `
+                                <a class="gh-repo" data-reveal href="${r.html_url}" target="_blank" rel="noopener">
+                                    <span class="gh-repo-name">${r.name}</span>
+                                    <span class="gh-repo-desc">${desc}</span>
+                                    <span class="gh-repo-meta">
+                                        <span class="dot-lang" style="--lang:${color}"></span>
+                                        ${r.language || '—'}
+                                        <span class="gh-star">★ ${r.stargazers_count}</span>
+                                        <span class="gh-fork">fork ${r.forks_count}</span>
+                                    </span>
+                                </a>`;
+                        }).join('');
+                        if (window.initReveal) window.initReveal(document.getElementById('ghRepos'));
+                    } catch (e) {
+                        const fb = document.getElementById('ghFallback');
+                        if (fb) fb.hidden = false;
+                    }
+                }
 
         loadGitHub();
     </script>
