@@ -171,208 +171,239 @@
     </section>
 
     <section id="projects" class="section bg-dark">
-        <div class="container">
-            <h2 data-i18n="projects.h2">Projetos Selecionados</h2>
-            <div class="project-grid">
+            <div class="container">
+                <h2 data-i18n="projects.h2">Projetos Selecionados</h2>
+            
+                <!-- ============================================================ -->
+                <!-- BACKEND & AUTOMATION FIRST -->
+                <!-- ============================================================ -->
+                <div class="project-section" data-reveal>
+                    <h3 class="section-subtitle" style="color: var(--amber); margin-bottom: 20px;">Backend & Automation</h3>
+                    <div class="project-grid">
+                    
+                        <!-- 1. Eduverse Platform -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="./assets/imgs/eduverse.jpg" alt="Eduverse Platform" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3>Eduverse Platform</h3>
+                                <p data-i18n="p1.desc">Backend para plataforma educacional digital. Arquitetura robusta utilizando Java, Spring Boot e PostgreSQL. Integração de APIs e modelagem de banco de dados.</p>
+                                <div class="tags">
+                                    <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span>
+                                </div>
+                                <a href="https://github.com/orgs/jcpm-eduverse/repositories" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="./assets/imgs/eduverse.jpg" alt="Backend Code" class="img-fluid">
-                    </div>
-                    <div class="project-info">
-                        <h3>Eduverse Platform</h3>
-                        <p data-i18n="p1.desc">Backend para plataforma educacional digital. Arquitetura robusta utilizando Java, Spring Boot e PostgreSQL. Integração de APIs e modelagem de banco de dados.</p>
-                        <div class="tags">
-                            <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span>
-                        </div>
-                        <a href="https://github.com/orgs/jcpm-eduverse/repositories" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
-                    </div>
-                </article>
+                        <!-- 2. Plataforma interna EJUNICAP -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="./assets/imgs/ejunicap.jpg" alt="Plataforma EJUNICAP" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3 data-i18n="p8.title">Plataforma interna EJUNICAP</h3>
+                                <p data-i18n="p8.desc">Plataforma interna da EJ Unicap para gerenciar demandas, clientes e projetos da empresa júnior. Backend em Python/FastAPI com PostgreSQL, desenhada para rodar a operação do dia a dia.</p>
+                                <div class="tags">
+                                    <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>CRM/ERP</span>
+                                </div>
+                                <a href="https://github.com/organizations/EJUnicap-org" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="2D C++ Engine" class="img-fluid">
-                    </div>
-                    <div class="project-info">
-                        <h3>Custom 2D Game Engine</h3>
-                        <p data-i18n="p2.desc">Engine 2D desenvolvida do zero (from scratch) em C++. Foco em arquitetura de baixo nível, gerenciamento manual de memória, loop de jogo otimizado e renderização de sprites.</p>
-                    <div class="tags">
-                    <span>C++</span><span>SDL/OpenGL</span><span>Systems Programming</span>
-                    </div>
-                        <a href="https://github.com/rossiniroberto52/gameengine-renew" class="link-arrow" target="_blank" data-i18n="link.githubcode">Ver Código no GitHub &rarr;</a>
-                    </div>
-                </article>
+                        <!-- 3. Agente Telegram EJ -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="./assets/imgs/ejunicap.jpg" alt="Agente Telegram EJ" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3>Agente Telegram EJ</h3>
+                                <p data-i18n="p11.desc">Bot de Telegram com RAG que centraliza os documentos da EJ Unicap e usa LLM para responder perguntas, mantendo o conhecimento da empresa sempre acessível e atualizado.</p>
+                                <div class="tags">
+                                    <span>Python</span><span>Telegram</span><span>RAG</span><span>LLM</span><span>Docker</span>
+                                </div>
+                                <a href="https://github.com/rossiniroberto52/agente_telegram_ej" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="./assets/imgs/n8n-workflow.png" alt="Automation" class="img-fluid">
-                    </div>
-                    <div class="project-info">
-                        <h3>AI Content Workflow</h3>
-                        <p data-i18n="p3.desc">Automação complexa via n8n integrando Gemini API e Notion. Gera ideias de conteúdo baseadas em RSS feeds e as organiza automaticamente.</p>
-                        <div class="tags">
-                            <span>n8n</span><span>Gemini API</span><span data-i18n="tag.automacao">Automação</span>
-                        </div>
-                        <a href="#" class="link-arrow" data-i18n="link.fluxo">Ver Fluxo &rarr;</a>
-                    </div>
-                </article>
+                        <!-- 4. CarRental API (NOVO) -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="CarRental API" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3>CarRental API</h3>
+                                <p>API RESTful para sistema de locação de veículos. Projeto acadêmico em equipe onde atuei como dev líder. Stack: Java 17, Spring Boot 3, PostgreSQL, JWT, Docker. Implementação de autenticação, gestão de frotas, reservas e pagamentos.</p>
+                                <div class="tags">
+                                    <span>Java</span><span>Spring Boot</span><span>PostgreSQL</span><span>JWT</span><span>Docker</span>
+                                </div>
+                                <a href="https://github.com/rossiniroberto52/carrental-api" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="./assets/imgs/DLIF_JAMcape.png" alt="Don't let it fall" class="img-fluid">
                     </div>
-                    <div class="project-info">
-                        <h3>Don't let it fall (GGJ 2026)</h3>
-                        <p data-i18n="p4.desc">Jogo 2D sobre um mundo distópico. Vencedor nas categorias "Melhor Visual" e "Melhor Jogo da Jam" na Poli UPE. Desenvolvido por uma equipe de 5 pessoas em menos de 48h.</p>
-                    <div class="tags">
-                    <span>Game Dev</span><span>Unity</span><span>C#</span>
-                    </div>
-                        <a href="https://globalgamejam.org/games/2026/dont-let-it-fall-1" class="link-arrow" target="_blank" data-i18n="link.ggj">Ver Projeto na GGJ &rarr;</a>
-                    </div>
-                </article>
+                </div>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="./assets/imgs/sim.png" alt="Backend Code" class="img-fluid">
-                    </div>
-                    <div class="project-info">
-                        <h3>Audity-sim</h3>
-                        <p data-i18n="p5.desc">Simulador de propagação acústica 2D em tempo real, acelerado via GPU usando Taichi Lang.</p>
-                        <div class="tags">
-                            <span>Python</span><span>Taichi Lang</span><span>GPU Computing</span><span>High Performance</span><span>Physics</span>
-                        </div>
-                        <a href="https://github.com/rossiniroberto52/audity-sim.git" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
-                    </div>
-                </article>
+                <!-- ============================================================ -->
+                <!-- SYSTEMS & LOW LEVEL -->
+                <!-- ============================================================ -->
+                <div class="project-section" data-reveal style="margin-top: 48px;">
+                    <h3 class="section-subtitle" style="color: var(--phosphor); margin-bottom: 20px;">Systems & Low Level</h3>
+                    <div class="project-grid">
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="./assets/imgs/suicide-burn-graphics.png" alt="Backend Code" class="img-fluid">
-                    </div>
-                    <div class="project-info">
-                        <h3>Orbital-Maneuver-Solver</h3>
-                        <p data-i18n="p6.desc">Uma ferramenta de simulação numérica de alta precisão em C++ para calcular manobras de pouso (Suicide Burn) com massa variável e arrasto gravitacional não-uniforme. Inclui pipeline de visualização de telemetria em Python.</p>
-                        <div class="tags">
-                            <span>C++</span><span>Python</span><span>Pandas</span><span>Physics</span>
-                        </div>
-                        <a href="https://github.com/rossiniroberto52/Orbital-Maneuver-Solver" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
-                    </div>
-                </article>
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="./assets/imgs/quartzlogo.png" alt="Backend Code" class="img-fluid">
-                    </div>
-                    <div class="project-info">
-                        <h3>Quartz </h3>
-                        <p data-i18n="p7.desc">Um compilador nativo desenvolvido do zero em C puro, traduzindo código estruturado direto para Assembly x86_64. Implementa escopo léxico rigoroso via Tabela de Símbolos plana (cache-friendly) e controle de fluxo com curto-circuito lógico no hardware.</p>
-                        <div class="tags">
-                            <span>C</span><span>Assembly x86_64</span><span>Linux</span>
-                        </div>
-                        <a href="https://github.com/rossiniroberto52/Quartz-LANG-AND-COMPILER" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
-                    </div>
-                </article>
+                        <!-- 5. Custom 2D Game Engine -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop" alt="2D C++ Engine" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3>Custom 2D Game Engine</h3>
+                                <p data-i18n="p2.desc">Engine 2D desenvolvida do zero (from scratch) em C++. Foco em arquitetura de baixo nível, gerenciamento manual de memória, loop de jogo otimizado e renderização de sprites.</p>
+                            <div class="tags">
+                            <span>C++</span><span>SDL/OpenGL</span><span>Systems Programming</span>
+                            </div>
+                                <a href="https://github.com/rossiniroberto52/gameengine-renew" class="link-arrow" target="_blank" data-i18n="link.githubcode">Ver Código no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="./assets/imgs/ejunicap.jpg" alt="Backend Code" class="img-fluid">
-                    </div>
-                    <div class="project-info">
-                        <h3 data-i18n="p8.title">Plataforma interna EJUNICAP</h3>
-                        <p data-i18n="p8.desc">Plataforma interna da EJ Unicap para gerenciar demandas, clientes e projetos da empresa júnior. Backend em Python/FastAPI com PostgreSQL, desenhada para rodar a operação do dia a dia.</p>
-                        <div class="tags">
-                            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>CRM/ERP</span>
-                        </div>
-                        <a href="https://github.com/organizations/EJUnicap-org" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
-                    </div>
-                </article>
+                        <!-- 6. Don't let it fall (GGJ 2026) -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="./assets/imgs/DLIF_JAMcape.png" alt="Don't let it fall" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3>Don't let it fall (GGJ 2026)</h3>
+                                <p data-i18n="p4.desc">Jogo 2D sobre um mundo distópico. Vencedor nas categorias "Melhor Visual" e "Melhor Jogo da Jam" na Poli UPE. Desenvolvido por uma equipe de 5 pessoas em menos de 48h.</p>
+                            <div class="tags">
+                            <span>Game Dev</span><span>Unity</span><span>C#</span>
+                            </div>
+                                <a href="https://globalgamejam.org/games/2026/dont-let-it-fall-1" class="link-arrow" target="_blank" data-i18n="link.ggj">Ver Projeto na GGJ &rarr;</a>
+                            </div>
+                        </article>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="./assets/imgs/tunel-de-vento.png" alt="Simulation code" class="img-fluid">
-                    </div>
-                    <div class="project-info">
-                        <h3 data-i18n="p9.title">Simulador de túnel de vento real</h3>
-                        <p data-i18n="p9.desc">Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.</p>
-                        <div class="tags">
-                            <span>Python</span><span>Taichi Lang</span><span>GPU Computing</span><span>C/C++</span><span>Physics</span>
-                        </div>
-                        <a href="https://github.com/rossiniroberto52/tunel-de-vento" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
-                    </div>
-                </article>
+                        <!-- 7. Audity-sim -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="./assets/imgs/sim.png" alt="Audity-sim" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3>Audity-sim</h3>
+                                <p data-i18n="p5.desc">Simulador de propagação acústica 2D em tempo real, acelerado via GPU usando Taichi Lang.</p>
+                                <div class="tags">
+                                    <span>Python</span><span>Taichi Lang</span><span>GPU Computing</span><span>High Performance</span><span>Physics</span>
+                                </div>
+                                <a href="https://github.com/rossiniroberto52/audity-sim.git" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <svg class="img-fluid" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder do projeto calc-visualizer" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="800" height="500" fill="#111111"/>
-                            <g stroke="rgba(224,220,211,0.05)" stroke-width="1">
-                                <line x1="40" y1="0" x2="40" y2="500"/><line x1="120" y1="0" x2="120" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/><line x1="280" y1="0" x2="280" y2="500"/><line x1="360" y1="0" x2="360" y2="500"/><line x1="440" y1="0" x2="440" y2="500"/><line x1="520" y1="0" x2="520" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/><line x1="680" y1="0" x2="680" y2="500"/><line x1="760" y1="0" x2="760" y2="500"/>
-                                <line x1="0" y1="40" x2="800" y2="40"/><line x1="0" y1="120" x2="800" y2="120"/><line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="280" x2="800" y2="280"/><line x1="0" y1="360" x2="800" y2="360"/><line x1="0" y1="440" x2="800" y2="440"/>
-                            </g>
-                            <line x1="40" y1="500" x2="40" y2="20" stroke="rgba(224,220,211,0.16)" stroke-width="1.5"/>
-                            <line x1="40" y1="300" x2="760" y2="300" stroke="rgba(224,220,211,0.16)" stroke-width="1.5"/>
-                            <polyline points="40,304 60,300 80,303 100,313 120,329 140,348 160,369 180,389 200,405 220,416 240,420 260,417 280,407 300,391 320,372 340,351 360,331 380,315 400,304 420,300 440,303 460,313 480,329 500,348 520,369 540,389 560,405 580,416 600,420 620,417 640,407 660,391 680,372 700,351 720,331 740,315 760,304" fill="none" stroke="rgba(95,191,106,0.4)" stroke-width="1.5"/>
-                            <polyline points="40,300 60,256 80,216 100,187 120,172 140,172 160,187 180,216 200,256 220,300 240,344 260,384 280,413 300,428 320,428 340,413 360,384 380,344 400,300 420,256 440,216 460,187 480,172 500,172 520,187 540,216 560,256 580,300 600,344 620,384 640,413 660,428 680,428 700,413 720,384 740,344 760,300" fill="none" stroke="#cf0000" stroke-width="2.5"/>
-                            <circle cx="40" cy="300" r="4" fill="#cf0000"/>
-                            <text x="52" y="286" font-family="'Space Mono',monospace" font-size="26" fill="#e0dcd3">f(x) = x² + 3x − 5</text>
-                            <text x="52" y="330" font-family="'Space Mono',monospace" font-size="16" fill="rgba(224,220,211,0.5)">LaTeX → SymPy → 2D/3D</text>
-                        </svg>
-                    </div>
-                    <div class="project-info">
-                        <h3>Calc Visualizer</h3>
-                        <p data-i18n="p10.desc">Notebook matemático local estilo Jupyter/Colab. Você digita LaTeX, o backend converte para SymPy e resolve simbolicamente (integrais, derivadas, limites) devolvendo o resultado e os pontos para gráficos 2D (Plotly) e 3D (Three.js) orbitáveis.</p>
-                        <div class="tags">
-                            <span>Python</span><span>FastAPI</span><span>SymPy</span><span>React</span><span>LaTeX</span>
-                        </div>
-                        <a href="https://github.com/rossiniroberto52/calc-visualizer" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
-                    </div>
-                </article>
+                        <!-- 8. Orbital-Maneuver-Solver -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="./assets/imgs/suicide-burn-graphics.png" alt="Orbital Maneuver Solver" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3>Orbital-Maneuver-Solver</h3>
+                                <p data-i18n="p6.desc">Uma ferramenta de simulação numérica de alta precisão em C++ para calcular manobras de pouso (Suicide Burn) com massa variável e arrasto gravitacional não-uniforme. Inclui pipeline de visualização de telemetria em Python.</p>
+                                <div class="tags">
+                                    <span>C++</span><span>Python</span><span>Pandas</span><span>Physics</span>
+                                </div>
+                                <a href="https://github.com/rossiniroberto52/Orbital-Maneuver-Solver" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <img src="./assets/imgs/ejunicap.jpg" alt="Agente Telegram EJ" class="img-fluid">
-                    </div>
-                    <div class="project-info">
-                        <h3>Agente Telegram EJ</h3>
-                        <p data-i18n="p11.desc">Bot de Telegram com RAG que centraliza os documentos da EJ Unicap e usa LLM para responder perguntas, mantendo o conhecimento da empresa sempre acessível e atualizado.</p>
-                        <div class="tags">
-                            <span>Python</span><span>Telegram</span><span>RAG</span><span>LLM</span><span>Docker</span>
-                        </div>
-                        <a href="https://github.com/rossiniroberto52/agente_telegram_ej" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
-                    </div>
-                </article>
+                        <!-- 9. Quartz Compiler -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="./assets/imgs/quartzlogo.png" alt="Quartz Compiler" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3>Quartz</h3>
+                                <p data-i18n="p7.desc">Um compilador nativo desenvolvido do zero em C puro, traduzindo código estruturado direto para Assembly x86_64. Implementa escopo léxico rigoroso via Tabela de Símbolos plana (cache-friendly) e controle de fluxo com curto-circuito lógico no hardware.</p>
+                                <div class="tags">
+                                    <span>C</span><span>Assembly x86_64</span><span>Linux</span>
+                                </div>
+                                <a href="https://github.com/rossiniroberto52/Quartz-LANG-AND-COMPILER" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-                <article class="project-card" data-reveal>
-                    <div class="project-image">
-                        <svg class="img-fluid" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder do projeto LLM Inference Engine" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="800" height="500" fill="#111111"/>
-                            <g stroke="rgba(224,220,211,0.05)" stroke-width="1">
-                                <line x1="40" y1="0" x2="40" y2="500"/><line x1="120" y1="0" x2="120" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/><line x1="280" y1="0" x2="280" y2="500"/><line x1="360" y1="0" x2="360" y2="500"/><line x1="440" y1="0" x2="440" y2="500"/><line x1="520" y1="0" x2="520" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/><line x1="680" y1="0" x2="680" y2="500"/><line x1="760" y1="0" x2="760" y2="500"/>
-                                <line x1="0" y1="40" x2="800" y2="40"/><line x1="0" y1="120" x2="800" y2="120"/><line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="280" x2="800" y2="280"/><line x1="0" y1="360" x2="800" y2="360"/><line x1="0" y1="440" x2="800" y2="440"/>
-                            </g>
-                            <rect x="50" y="70" width="700" height="360" rx="8" fill="#181818" stroke="rgba(224,220,211,0.12)" stroke-width="1.5"/>
-                            <circle cx="75" cy="95" r="5" fill="#cf0000"/>
-                            <circle cx="95" cy="95" r="5" fill="#e0dcd3" opacity="0.3"/>
-                            <circle cx="115" cy="95" r="5" fill="#e0dcd3" opacity="0.3"/>
-                            <text x="75" y="150" font-family="'Space Mono',monospace" font-size="20" fill="#e0dcd3">$ ./engine --model tinyllama-1.1b.bin</text>
-                            <text x="75" y="195" font-family="'Space Mono',monospace" font-size="16" fill="rgba(224,220,211,0.5)">[mmap] mapped 4.4GB weights to memory</text>
-                            <text x="75" y="235" font-family="'Space Mono',monospace" font-size="16" fill="rgba(224,220,211,0.5)">[engine] GQA + RoPE + KV Cache initialized</text>
-                            <text x="75" y="275" font-family="'Space Mono',monospace" font-size="16" fill="rgba(95,191,106,0.85)">&gt; Inference: C++ native execution</text>
-                        </svg>
-                    </div>
-                    <div class="project-info">
-                        <h3>LLM Inference Engine from Scratch</h3>
-                        <p data-i18n="p12.desc">Motor de inferência de LLM construído do zero em C++, rodando o TinyLlama-1.1B via mmap dos pesos. Implementa RoPE, Grouped-Query Attention, KV Cache e sampling top-k/temperatura sem nenhum framework de ML.</p>
-                        <div class="tags">
-                            <span>C++</span><span>LLM</span><span>Systems Programming</span><span>mmap</span>
-                        </div>
-                        <a href="https://github.com/rossiniroberto52/llm-model-by-scratch.git" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
-                    </div>
-                </article>
+                        <!-- 10. Simulador de túnel de vento -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <img src="./assets/imgs/tunel-de-vento.png" alt="Wind Tunnel Simulator" class="img-fluid">
+                            </div>
+                            <div class="project-info">
+                                <h3 data-i18n="p9.title">Simulador de túnel de vento real</h3>
+                                <p data-i18n="p9.desc">Simulador de escoamento de fluidos 2D em tempo real, utilizando métodos de Lattice Boltzmann (LBM) para alta precisão e acelerado por GPU com Taichi Lang. Permite visualização interativa de padrões de fluxo e otimização de perfis aerodinâmicos.</p>
+                                <div class="tags">
+                                    <span>Python</span><span>Taichi Lang</span><span>GPU Computing</span><span>C/C++</span><span>Physics</span>
+                                </div>
+                                <a href="https://github.com/rossiniroberto52/tunel-de-vento" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-            </div>
+                        <!-- 11. Calc Visualizer -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <svg class="img-fluid" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder do projeto calc-visualizer" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="800" height="500" fill="#111111"/>
+                                    <g stroke="rgba(224,220,211,0.05)" stroke-width="1">
+                                        <line x1="40" y1="0" x2="40" y2="500"/><line x1="120" y1="0" x2="120" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/><line x1="280" y1="0" x2="280" y2="500"/><line x1="360" y1="0" x2="360" y2="500"/><line x1="440" y1="0" x2="440" y2="500"/><line x1="520" y1="0" x2="520" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/><line x1="680" y1="0" x2="680" y2="500"/><line x1="760" y1="0" x2="760" y2="500"/>
+                                        <line x1="0" y1="40" x2="800" y2="40"/><line x1="0" y1="120" x2="800" y2="120"/><line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="280" x2="800" y2="280"/><line x1="0" y1="360" x2="800" y2="360"/><line x1="0" y1="440" x2="800" y2="440"/>
+                                    </g>
+                                    <line x1="40" y1="500" x2="40" y2="20" stroke="rgba(224,220,211,0.16)" stroke-width="1.5"/>
+                                    <line x1="40" y1="300" x2="760" y2="300" stroke="rgba(224,220,211,0.16)" stroke-width="1.5"/>
+                                    <polyline points="40,304 60,300 80,303 100,313 120,329 140,348 160,369 180,389 200,405 220,416 240,420 260,417 280,407 300,391 320,372 340,351 360,331 380,315 400,304 420,300 440,303 460,313 480,329 500,348 520,369 540,389 560,405 580,416 600,420 620,417 640,407 660,391 680,372 700,351 720,331 740,315 760,304" fill="none" stroke="rgba(95,191,106,0.4)" stroke-width="1.5"/>
+                                    <polyline points="40,300 60,256 80,216 100,187 120,172 140,172 160,187 180,216 200,256 220,300 240,344 260,384 280,413 300,428 320,428 340,413 360,384 380,344 400,300 420,256 440,216 460,187 480,172 500,172 520,187 540,216 560,256 580,300 600,344 620,384 640,413 660,428 680,428 700,413 720,384 740,344 760,300" fill="none" stroke="#cf0000" stroke-width="2.5"/>
+                                    <circle cx="40" cy="300" r="4" fill="#cf0000"/>
+                                    <text x="52" y="286" font-family="'Space Mono',monospace" font-size="26" fill="#e0dcd3">f(x) = x² + 3x − 5</text>
+                                    <text x="52" y="330" font-family="'Space Mono',monospace" font-size="16" fill="rgba(224,220,211,0.5)">LaTeX → SymPy → 2D/3D</text>
+                                </svg>
+                            </div>
+                            <div class="project-info">
+                                <h3>Calc Visualizer</h3>
+                                <p data-i18n="p10.desc">Notebook matemático local estilo Jupyter/Colab. Você digita LaTeX, o backend converte para SymPy e resolve simbolicamente (integrais, derivadas, limites) devolvendo o resultado e os pontos para gráficos 2D (Plotly) e 3D (Three.js) orbitáveis.</p>
+                                <div class="tags">
+                                    <span>Python</span><span>FastAPI</span><span>SymPy</span><span>React</span><span>LaTeX</span>
+                                </div>
+                                <a href="https://github.com/rossiniroberto52/calc-visualizer" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
 
-            <!-- ============================================================ -->
-            <!-- HOME LAB / INFRAESTRUTURA — LEITURA TÉCNICA REFLEX -->
+                        <!-- 12. LLM Inference Engine from Scratch -->
+                        <article class="project-card" data-reveal>
+                            <div class="project-image">
+                                <svg class="img-fluid" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Placeholder do projeto LLM Inference Engine" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="800" height="500" fill="#111111"/>
+                                    <g stroke="rgba(224,220,211,0.05)" stroke-width="1">
+                                        <line x1="40" y1="0" x2="40" y2="500"/><line x1="120" y1="0" x2="120" y2="500"/><line x1="200" y1="0" x2="200" y2="500"/><line x1="280" y1="0" x2="280" y2="500"/><line x1="360" y1="0" x2="360" y2="500"/><line x1="440" y1="0" x2="440" y2="500"/><line x1="520" y1="0" x2="520" y2="500"/><line x1="600" y1="0" x2="600" y2="500"/><line x1="680" y1="0" x2="680" y2="500"/><line x1="760" y1="0" x2="760" y2="500"/>
+                                        <line x1="0" y1="40" x2="800" y2="40"/><line x1="0" y1="120" x2="800" y2="120"/><line x1="0" y1="200" x2="800" y2="200"/><line x1="0" y1="280" x2="800" y2="280"/><line x1="0" y1="360" x2="800" y2="360"/><line x1="0" y1="440" x2="800" y2="440"/>
+                                    </g>
+                                    <rect x="50" y="70" width="700" height="360" rx="8" fill="#181818" stroke="rgba(224,220,211,0.12)" stroke-width="1.5"/>
+                                    <circle cx="75" cy="95" r="5" fill="#cf0000"/>
+                                    <circle cx="95" cy="95" r="5" fill="#e0dcd3" opacity="0.3"/>
+                                    <circle cx="115" cy="95" r="5" fill="#e0dcd3" opacity="0.3"/>
+                                    <text x="75" y="150" font-family="'Space Mono',monospace" font-size="20" fill="#e0dcd3">$ ./engine --model tinyllama-1.1b.bin</text>
+                                    <text x="75" y="195" font-family="'Space Mono',monospace" font-size="16" fill="rgba(224,220,211,0.5)">[mmap] mapped 4.4GB weights to memory</text>
+                                    <text x="75" y="235" font-family="'Space Mono',monospace" font-size="16" fill="rgba(224,220,211,0.5)">[engine] GQA + RoPE + KV Cache initialized</text>
+                                    <text x="75" y="275" font-family="'Space Mono',monospace" font-size="16" fill="rgba(95,191,106,0.85)">> Inference: C++ native execution</text>
+                                </svg>
+                            </div>
+                            <div class="project-info">
+                                <h3>LLM Inference Engine from Scratch</h3>
+                                <p data-i18n="p12.desc">Motor de inferência de LLM construído do zero em C++, rodando o TinyLlama-1.1B via mmap dos pesos. Implementa RoPE, Grouped-Query Attention, KV Cache e sampling top-k/temperatura sem nenhum framework de ML.</p>
+                                <div class="tags">
+                                    <span>C++</span><span>LLM</span><span>Systems Programming</span><span>mmap</span>
+                                </div>
+                                <a href="https://github.com/rossiniroberto52/llm-model-by-scratch.git" class="link-arrow" target="_blank" data-i18n="link.github">Ver no GitHub &rarr;</a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+
+                <!-- ============================================================ -->
+                <!-- HOME LAB / INFRAESTRUTURA -->
+                <!-- ============================================================ -->
             <!-- ============================================================ -->
             <div class="homelab-wrap" data-reveal>
 
