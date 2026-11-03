@@ -936,51 +936,63 @@
                         if (user.message || !Array.isArray(repos)) throw new Error('api');
 
                         const totalStars = repos.reduce((a, r) => a + (r.stargazers_count || 0), 0);
-                
-                        // Pinned repos for backend recruiter (ordered by relevance)
-                                        const pinnedNames = [
-                                            'portf-lio',
-                                            'Veloce-Rent-a-Car',  // CarRental API (org: Veloce-Rent-a-Car)
-                                            'agente_telegram_ej',
-                                            'audity-sim',
-                                            'Orbital-Maneuver-Solver',
-                                            'Quartz-LANG-AND-COMPILER',
-                                            'gameengine-renew',
-                                            'llm-model-by-scratch'
-                                        ];
-                
-                        // Filter to only existing repos
-                        const repoMap = new Map(repos.map(r => [r.name.toLowerCase(), r]));
-                        const pinned = pinnedNames
-                            .map(name => repoMap.get(name.toLowerCase()))
-                            .filter(Boolean)
-                            .slice(0, 5);
 
-                        ghSetStat('repos', user.public_repos ?? repos.length);
-                        ghSetStat('followers', user.followers ?? '—');
-                        ghSetStat('stars', totalStars);
-                        ghSetStat('lastPush', ghTimeAgo(repos[0]?.pushed_at));
+                                                // Pinned repos for backend recruiter — fetch each by full name (org/user/repo)
+                                                // Org repos (jcpm-eduverse, Veloce-Rent-a-Car) don't appear in /users/rossiniroberto52/repos
+                                                const pinnedRepos = [
+                                                    { owner: 'jcpm-eduverse', name: 'api-eduverse' },
+                                                    { owner: 'Veloce-Rent-a-Car', name: 'Veloce-Rent-a-Car' },
+                                                    { owner: 'rossiniroberto52', name: 'agente_telegram_ej' },
+                                                    { owner: 'rossiniroberto52', name: 'llm-model-by-scratch' },
+                                                    { owner: 'rossiniroberto52', name: 'Quartz-LANG-AND-COMPILER' }
+                                                ];
 
-                        const displayRepos = pinned.length > 0 ? pinned : repos
-                            .filter(r => !r.fork && r.name.toLowerCase() !== GH_USER.toLowerCase())
-                            .slice(0, 4);
+                                                // Fetch each pinned repo individually; fallback to static data if API fails
+                                                async function fetchPinnedRepos() {
+                                                    const results = [];
+                                                    for (const { owner, name } of pinnedRepos) {
+                                                        try {
+                                                            const res = await fetch(`https://api.github.com/repos/${owner}/${name}`);
+                                                            if (res.ok) {
+                                                                const data = await res.json();
+                                                                results.push(data);
+                                                            } else {
+                                                                console.warn(`Pinned repo ${owner}/${name}: ${res.status}`);
+                                                            }
+                                                        } catch (e) {
+                                                            console.warn(`Pinned repo ${owner}/${name} fetch failed:`, e);
+                                                        }
+                                                    }
+                                                    return results;
+                                                }
 
-                        document.getElementById('ghRepos').innerHTML = displayRepos.map(r => {
-                            const desc = (r.description || '').replace(/</g, '<').replace(/>/g, '>') || '—';
-                            const color = LANG_COLORS[r.language] || GH_FALLBACK_COLOR;
-                            return `
-                                <a class="gh-repo" data-reveal href="${r.html_url}" target="_blank" rel="noopener">
-                                    <span class="gh-repo-name">${r.name}</span>
-                                    <span class="gh-repo-desc">${desc}</span>
-                                    <span class="gh-repo-meta">
-                                        <span class="dot-lang" style="--lang:${color}"></span>
-                                        ${r.language || '—'}
-                                        <span class="gh-star">★ ${r.stargazers_count}</span>
-                                        <span class="gh-fork">fork ${r.forks_count}</span>
-                                    </span>
-                                </a>`;
-                        }).join('');
-                        if (window.initReveal) window.initReveal(document.getElementById('ghRepos'));
+                                                const pinned = await fetchPinnedRepos();
+
+                                                ghSetStat('repos', user.public_repos ?? repos.length);
+                                                ghSetStat('followers', user.followers ?? '—');
+                                                ghSetStat('stars', totalStars);
+                                                ghSetStat('lastPush', ghTimeAgo(repos[0]?.pushed_at));
+
+                                                const displayRepos = pinned.length > 0 ? pinned : repos
+                                                    .filter(r => !r.fork && r.name.toLowerCase() !== GH_USER.toLowerCase())
+                                                    .slice(0, 4);
+
+                                                document.getElementById('ghRepos').innerHTML = displayRepos.map(r => {
+                                                    const desc = (r.description || '').replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>') || '—';
+                                                    const color = LANG_COLORS[r.language] || GH_FALLBACK_COLOR;
+                                                    return `
+                                                        <a class="gh-repo" data-reveal href="${r.html_url}" target="_blank" rel="noopener">
+                                                            <span class="gh-repo-name">${r.name}</span>
+                                                            <span class="gh-repo-desc">${desc}</span>
+                                                            <span class="gh-repo-meta">
+                                                                <span class="dot-lang" style="--lang:${color}"></span>
+                                                                ${r.language || '—'}
+                                                                <span class="gh-star">★ ${r.stargazers_count}</span>
+                                                                <span class="gh-fork">fork ${r.forks_count}</span>
+                                                            </span>
+                                                        </a>`;
+                                                }).join('');
+                                                if (window.initReveal) window.initReveal(document.getElementById('ghRepos'));
                     } catch (e) {
                         const fb = document.getElementById('ghFallback');
                         if (fb) fb.hidden = false;
