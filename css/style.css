@@ -163,6 +163,10 @@ h2::after {
     opacity: 0.6;
 }
 
+h2.no-terminal-label::after {
+    display: none;
+}
+
 /* ---------- Scroll Reveal ---------- */
 [data-reveal] { will-change: opacity, transform; }
 .reveal-ready [data-reveal]:not(.reveal-in) { opacity: 0; }
@@ -1064,6 +1068,51 @@ footer p {
 }
 
 /* ============================================================ */
+/* LOOKING FOR SECTION */
+/* ============================================================ */
+.looking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.looking-card {
+    background: var(--surface-1);
+    border: 1px solid var(--border-line);
+    padding: 20px;
+    transition: border-color 0.15s ease;
+}
+
+.looking-card:hover {
+    border-color: var(--border-subtle);
+}
+
+.looking-card h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--amber);
+    margin-bottom: 10px;
+}
+
+.looking-card p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.looking-card a {
+    color: var(--phosphor);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.looking-card a:hover {
+    color: var(--amber);
+    border-color: var(--amber);
+}
+
+/* ============================================================ */
 /* HOME LAB / INFRAESTRUTURA — LEITURA TÉCNICA REFLEX            */
 /* Estética cyber-metal-ux-pro: zero border-radius, sombras       */
 /* rígidas, scanlines de sobreposição, display Orbitron/Syncopate */
@@ -1405,6 +1454,51 @@ footer p {
     .hl-grid { grid-template-columns: 1fr; }
     .hl-net-svg { height: 200px; }
     .hl-panel-body { padding: 14px 16px; }
+}
+
+/* Navbar responsive: show hamburger earlier to prevent overlap */
+@media (max-width: 900px) {
+    .nav-links {
+        position: fixed;
+        top: 62px;
+        right: 0;
+        width: 220px;
+        height: calc(100vh - 62px);
+        background: var(--void-black);
+        border-left: 1px solid var(--border-line);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        gap: 12px;
+        transform: translateX(100%);
+        transition: transform 0.25s ease;
+        z-index: 999;
+    }
+    .nav-links.open {
+        transform: translateX(0);
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links a {
+        display: block;
+        padding: 10px 12px;
+        border: 1px solid var(--border-line);
+    }
+    .nav-links a:hover {
+        border-color: var(--amber);
+        background: var(--surface-1);
+    }
+    .btn-contact {
+        width: 100%;
+        text-align: center;
+    }
+    .hamburger {
+        display: flex;
+    }
+    .navbar-right {
+        gap: 12px;
+    }
 }
 
 @media (max-width: 560px) {
