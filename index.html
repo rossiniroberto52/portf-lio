@@ -897,7 +897,7 @@
     </script>
 
     <script>
-        // ===== Telemetria do GitHub (dados ao vivo) =====
+        // ===== Telemetria do GitHub (dados ao vivo + overrides estáticos) =====
         const GH_USER = 'rossiniroberto52';
         const LANG_COLORS = {
             'Java': '#b07219', 'Python': '#3572A5', 'C++': '#f34b7d', 'C': '#555555',
@@ -905,6 +905,39 @@
             'TypeScript': '#3178c6', 'Jupyter Notebook': '#DA5B0B', 'TeX': '#3D6117'
         };
         const GH_FALLBACK_COLOR = '#93a1ad';
+
+        // Static overrides: description (PT/EN) and language forced on top of API data
+        const REPO_OVERRIDES = {
+            'Veloce-Rent-a-Car': {
+                desc: { pt: 'API RESTful para sistema de locação de veículos. Projeto acadêmico em equipe (dev líder). Stack: Java 17, Spring Boot 3, PostgreSQL, JWT, Docker.', en: 'REST API for vehicle rental system. Academic team project (dev lead). Stack: Java 17, Spring Boot 3, PostgreSQL, JWT, Docker.' },
+                lang: 'Java'
+            },
+            'agente_telegram_ej': {
+                desc: { pt: 'Bot de Telegram com RAG que centraliza documentos da EJ Unicap e usa LLM para responder perguntas.', en: 'Telegram bot with RAG that centralizes EJ Unicap documents and uses LLM to answer questions.' },
+                lang: 'Python'
+            },
+            'llm-model-by-scratch': {
+                desc: { pt: 'Motor de inferência LLM do zero em C++, rodando TinyLlama-1.1B via mmap. RoPE, GQA, KV Cache, sampling top-k/temperatura sem frameworks ML.', en: 'LLM inference engine from scratch in C++, running TinyLlama-1.1B via mmap. RoPE, GQA, KV Cache, top-k/temperature sampling without ML frameworks.' },
+                lang: 'C++'
+            },
+            'Quartz-LANG-AND-COMPILER': {
+                desc: { pt: 'Compilador nativo do zero em C puro, traduz código estruturado direto para Assembly x86_64. Tabela de símbolos plana (cache-friendly) e curto-circuito lógico no hardware.', en: 'Native compiler from scratch in pure C, translates structured code directly to x86_64 Assembly. Flat symbol table (cache-friendly) and hardware-level short-circuit flow control.' },
+                lang: 'C'  // Force C instead of Makefile
+            },
+            'gameengine-renew': {
+                desc: { pt: 'Engine 2D from scratch em C++. Arquitetura de baixo nível, gerenciamento manual de memória, game loop otimizado, renderização de sprites.', en: '2D engine from scratch in C++. Low-level architecture, manual memory management, optimized game loop, sprite rendering.' },
+                lang: 'C++'
+            }
+        };
+
+        // Pinned repos to display (org/user/repo)
+        const PINNED_REPOS = [
+            { owner: 'Veloce-Rent-a-Car', name: 'Veloce-Rent-a-Car' },
+            { owner: 'rossiniroberto52', name: 'agente_telegram_ej' },
+            { owner: 'rossiniroberto52', name: 'llm-model-by-scratch' },
+            { owner: 'rossiniroberto52', name: 'Quartz-LANG-AND-COMPILER' },
+            { owner: 'rossiniroberto52', name: 'gameengine-renew' }
+        ];
 
         function ghTimeAgo(iso) {
             if (!iso) return '—';
@@ -928,76 +961,74 @@
         }
 
         async function loadGitHub() {
+            try {
+                const [user, repos] = await Promise.all([
+                    fetch(`https://api.github.com/users/${GH_USER}`).then(r => r.json()),
+                    fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`).then(r => r.json())
+                ]);
+                if (user.message || !Array.isArray(repos)) throw new Error('api');
+
+                const totalStars = repos.reduce((a, r) => a + (r.stargazers_count || 0), 0);
+
+                // Fetch pinned repos individually; track private/404
+                const failedRepos = [];
+                const pinned = [];
+                for (const { owner, name } of PINNED_REPOS) {
                     try {
-                        const [user, repos] = await Promise.all([
-                            fetch(`https://api.github.com/users/${GH_USER}`).then(r => r.json()),
-                            fetch(`https://api.github.com/users/${GH_USER}/repos?per_page=100&sort=updated`).then(r => r.json())
-                        ]);
-                        if (user.message || !Array.isArray(repos)) throw new Error('api');
-
-                        const totalStars = repos.reduce((a, r) => a + (r.stargazers_count || 0), 0);
-
-                                                // Pinned repos for backend recruiter — fetch each by full name (org/user/repo)
-                                                // Org repos (jcpm-eduverse, Veloce-Rent-a-Car) don't appear in /users/rossiniroberto52/repos
-                                                const pinnedRepos = [
-                                                    { owner: 'Veloce-Rent-a-Car', name: 'Veloce-Rent-a-Car' },
-                                                    { owner: 'rossiniroberto52', name: 'agente_telegram_ej' },
-                                                    { owner: 'rossiniroberto52', name: 'llm-model-by-scratch' },
-                                                    { owner: 'rossiniroberto52', name: 'Quartz-LANG-AND-COMPILER' },
-                                                    { owner: 'rossiniroberto52', name: 'gameengine-renew' }
-                                                ];
-
-                                                // Fetch each pinned repo individually; fallback to static data if API fails
-                                                async function fetchPinnedRepos() {
-                                                    const results = [];
-                                                    for (const { owner, name } of pinnedRepos) {
-                                                        try {
-                                                            const res = await fetch(`https://api.github.com/repos/${owner}/${name}`);
-                                                            if (res.ok) {
-                                                                const data = await res.json();
-                                                                results.push(data);
-                                                            } else {
-                                                                console.warn(`Pinned repo ${owner}/${name}: ${res.status}`);
-                                                            }
-                                                        } catch (e) {
-                                                            console.warn(`Pinned repo ${owner}/${name} fetch failed:`, e);
-                                                        }
-                                                    }
-                                                    return results;
-                                                }
-
-                                                const pinned = await fetchPinnedRepos();
-
-                                                ghSetStat('repos', user.public_repos ?? repos.length);
-                                                ghSetStat('followers', user.followers ?? '—');
-                                                ghSetStat('stars', totalStars);
-                                                ghSetStat('lastPush', ghTimeAgo(repos[0]?.pushed_at));
-
-                                                const displayRepos = pinned.length > 0 ? pinned : repos
-                                                    .filter(r => !r.fork && r.name.toLowerCase() !== GH_USER.toLowerCase())
-                                                    .slice(0, 4);
-
-                                                document.getElementById('ghRepos').innerHTML = displayRepos.map(r => {
-                                                    const desc = (r.description || '').replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>') || '—';
-                                                    const color = LANG_COLORS[r.language] || GH_FALLBACK_COLOR;
-                                                    return `
-                                                        <a class="gh-repo" data-reveal href="${r.html_url}" target="_blank" rel="noopener">
-                                                            <span class="gh-repo-name">${r.name}</span>
-                                                            <span class="gh-repo-desc">${desc}</span>
-                                                            <span class="gh-repo-meta">
-                                                                <span class="dot-lang" style="--lang:${color}"></span>
-                                                                ${r.language || '—'}
-                                                                <span class="gh-star">★ ${r.stargazers_count}</span>
-                                                                <span class="gh-fork">fork ${r.forks_count}</span>
-                                                            </span>
-                                                        </a>`;
-                                                }).join('');
-                                                if (window.initReveal) window.initReveal(document.getElementById('ghRepos'));
+                        const res = await fetch(`https://api.github.com/repos/${owner}/${name}`);
+                        if (res.ok) {
+                            const data = await res.json();
+                            pinned.push(data);
+                        } else if (res.status === 404) {
+                            failedRepos.push(`${owner}/${name} (404 - private ou não existe)`);
+                            console.warn(`Pinned repo ${owner}/${name}: 404`);
+                        } else {
+                            console.warn(`Pinned repo ${owner}/${name}: ${res.status}`);
+                        }
                     } catch (e) {
-                        const fb = document.getElementById('ghFallback');
-                        if (fb) fb.hidden = false;
+                        console.warn(`Pinned repo ${owner}/${name} fetch failed:`, e);
                     }
                 }
+
+                // Report failed repos
+                if (failedRepos.length > 0) {
+                    console.log('Repositórios privados/não encontrados (excluídos da exibição):', failedRepos.join(', '));
+                }
+
+                ghSetStat('repos', user.public_repos ?? repos.length);
+                ghSetStat('followers', user.followers ?? '—');
+                ghSetStat('stars', totalStars);
+                ghSetStat('lastPush', ghTimeAgo(repos[0]?.pushed_at));
+
+                const displayRepos = pinned.length > 0 ? pinned : repos
+                    .filter(r => !r.fork && r.name.toLowerCase() !== GH_USER.toLowerCase())
+                    .slice(0, 4);
+
+                const currentLang = document.documentElement.lang.startsWith('pt') ? 'pt' : 'en';
+
+                document.getElementById('ghRepos').innerHTML = displayRepos.map(r => {
+                    const override = REPO_OVERRIDES[r.name] || {};
+                    const desc = override.desc?.[currentLang] || (r.description || '').replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>') || '—';
+                    const lang = override.lang || r.language || '—';
+                    const color = LANG_COLORS[lang] || GH_FALLBACK_COLOR;
+                    return `
+                        <a class="gh-repo" data-reveal href="${r.html_url}" target="_blank" rel="noopener">
+                            <span class="gh-repo-name">${r.name}</span>
+                            <span class="gh-repo-desc">${desc}</span>
+                            <span class="gh-repo-meta">
+                                <span class="dot-lang" style="--lang:${color}"></span>
+                                ${lang}
+                                <span class="gh-star">★ ${r.stargazers_count}</span>
+                                <span class="gh-fork">fork ${r.forks_count}</span>
+                            </span>
+                        </a>`;
+                }).join('');
+                if (window.initReveal) window.initReveal(document.getElementById('ghRepos'));
+            } catch (e) {
+                const fb = document.getElementById('ghFallback');
+                if (fb) fb.hidden = false;
+            }
+        }
 
         loadGitHub();
     </script>
