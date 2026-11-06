@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06080a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1014;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle grid pattern -->
+  <g stroke="rgba(255,176,0,0.04)" stroke-width="1">
+    <line x1="0" y1="40" x2="1200" y2="40"/>
+    <line x1="0" y1="120" x2="1200" y2="120"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="280" x2="1200" y2="280"/>
+    <line x1="0" y1="360" x2="1200" y2="360"/>
+    <line x1="0" y1="440" x2="1200" y2="440"/>
+    <line x1="0" y1="520" x2="1200" y2="520"/>
+    <line x1="40" y1="0" x2="40" y2="630"/>
+    <line x1="120" y1="0" x2="120" y2="630"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="280" y1="0" x2="280" y2="630"/>
+    <line x1="360" y1="0" x2="360" y2="630"/>
+    <line x1="440" y1="0" x2="440" y2="630"/>
+    <line x1="520" y1="0" x2="520" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="680" y1="0" x2="680" y2="630"/>
+    <line x1="760" y1="0" x2="760" y2="630"/>
+    <line x1="840" y1="0" x2="840" y2="630"/>
+    <line x1="920" y1="0" x2="920" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+    <line x1="1080" y1="0" x2="1080" y2="630"/>
+    <line x1="1160" y1="0" x2="1160" y2="630"/>
+  </g>
+
+  <!-- Accent lines -->
+  <line x1="60" y1="315" x2="1140" y2="315" stroke="#ffb000" stroke-width="2" stroke-dasharray="8 4"/>
+  <line x1="60" y1="315" x2="200" y2="315" stroke="#ffb000" stroke-width="3"/>
+  <line x1="1000" y1="315" x2="1140" y2="315" stroke="#ffb000" stroke-width="3"/>
+
+  <!-- Terminal prompt style text -->
+  <text x="80" y="200" font-family="'JetBrains Mono', 'Share Tech Mono', monospace" font-size="18" fill="#ffb000" letter-spacing="1.5">> rossini@dev</text>
+  
+  <!-- Main title -->
+  <text x="80" y="280" font-family="'Rajdhani', 'Orbitron', sans-serif" font-size="52" font-weight="700" fill="#e2e8f0" letter-spacing="4" text-transform="uppercase">Portfólio Roberto Rossini</text>
+  
+  <!-- Subtitle -->
+  <text x="80" y="355" font-family="'JetBrains Mono', 'Share Tech Mono', monospace" font-size="22" fill="#ffb000" letter-spacing="2">Backend Developer · Java / Spring Boot / PostgreSQL</text>
+  
+  <!-- Status badge -->
+  <text x="80" y="410" font-family="'JetBrains Mono', 'Share Tech Mono', monospace" font-size="16" fill="#33ff66" letter-spacing="1.5">[ EM BUSCA DE ESTÁGIO · BACKEND JAVA/SPRING BOOT ]</text>
+  
+  <!-- Divider -->
+  <line x1="80" y1="430" x2="400" y2="430" stroke="#ffb000" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Contact line -->
+  <text x="80" y="470" font-family="'JetBrains Mono', 'Share Tech Mono', monospace" font-size="14" fill="#78889b" letter-spacing="0.5">linkedin.com/in/rossini-roberto  •  github.com/rossiniroberto52</text>
+  
+  <!-- Bottom accent -->
+  <text x="1120" y="600" font-family="'Share Tech Mono', monospace" font-size="14" fill="rgba(255,176,0,0.4)" text-anchor="end" letter-spacing="1">SYS.ONLINE</text>
+  
+  <!-- Corner brackets -->
+  <g stroke="#ffb000" stroke-width="2" fill="none">
+    <path d="M 40 40 L 40 100 M 40 40 L 100 40"/>
+    <path d="M 1160 40 L 1160 100 M 1160 40 L 1100 40"/>
+    <path d="M 40 590 L 40 530 M 40 590 L 100 590"/>
+    <path d="M 1160 590 L 1160 530 M 1160 590 L 1100 590"/>
+  </g>
+</svg>
